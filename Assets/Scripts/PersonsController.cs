@@ -21,6 +21,8 @@ public class PersonsController : MonoBehaviour
     public KeyCode jumpKey = KeyCode.Space;
     public KeyCode specialActionKey = KeyCode.F;
 
+    public bool movementDirectionReverse = false;
+
 
     [Header("Параметры коллизий")]
     public List<GameObject> collisionObjects; // Объекты для возможных столкновений
@@ -45,6 +47,7 @@ public class PersonsController : MonoBehaviour
             characterParams.SetMovementSpeed(movementSpeed);
             characterParams.SetJumpForce(jumpForce);
             characterParams.SetColliderSize(colliderSize);
+            characterParams.SetMovementDirection(movementDirectionReverse ? -1: 1);
 
             objects.Add(newCharacter);
         }
@@ -58,9 +61,16 @@ public class PersonsController : MonoBehaviour
     }
 
     // Изменение направления движения
-    public void SetCharacterMovementDirection(GameObject character, Vector2 direction)
+    public void ChangeMovementDirection(GameObject character)
     {
-        
+        CharacterParams characterParams = character.GetComponent<CharacterParams>();
+        characterParams.ChangeMovementDirection();
+    }
+
+    public void ChangeMovementDirection(GameObject character, int direction)
+    {
+        CharacterParams characterParams = character.GetComponent<CharacterParams>();
+        characterParams.SetMovementDirection(direction);
     }
 
     // Задание позиции на карте через LevelEditor

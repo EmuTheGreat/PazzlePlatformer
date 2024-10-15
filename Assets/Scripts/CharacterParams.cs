@@ -6,7 +6,7 @@ public class CharacterParams : MonoBehaviour
     public float jumpForce;
     public SpriteRenderer spriteRenderer;
     public Vector2 colliderSize;
-    public Vector2 movementDirection;
+    public int movementDirection;
 
     private BoxCollider2D collider2D;
 
@@ -33,13 +33,10 @@ public class CharacterParams : MonoBehaviour
 
     public void SetColliderSize(Vector2 size)
     {
-        if (collider2D != null)
-        {
-            transform.localScale = size;
-        }
+        transform.localScale = size;
         if (spriteRenderer != null)
         {
-            
+
         }
     }
 
@@ -48,10 +45,14 @@ public class CharacterParams : MonoBehaviour
         spriteRenderer.sprite = newSprite;
     }
 
-    public void SetMovementDirection(Vector2 direction)
+    public void SetMovementDirection(int direction)
     {
         movementDirection = direction;
-        // Здесь добавляется логика движения
+    }
+
+    public void ChangeMovementDirection()
+    {
+        movementDirection *= -1;
     }
 }
 

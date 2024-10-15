@@ -9,7 +9,7 @@ public class PersonsControllerEditor : Editor
         DrawDefaultInspector();
         PersonsController controller = (PersonsController)target;
 
-        if (GUILayout.Button("Create and Add Object"))
+        if (GUILayout.Button("Create Character"))
         {
             controller.CreateCharacter();
         }
