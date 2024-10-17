@@ -34,10 +34,6 @@ public class CharacterParams : MonoBehaviour
     public void SetColliderSize(Vector2 size)
     {
         transform.localScale = size;
-        if (spriteRenderer != null)
-        {
-
-        }
     }
 
     public void SetSprite(Sprite newSprite)

@@ -7,6 +7,10 @@ public class PersonsController : MonoBehaviour
     private GameObject personsList;
     [SerializeField]
     private GameObject playerPrefab;
+    [SerializeField]
+    private GameObject playerPrefabForChangeSkin;
+    [HideInInspector]
+    public int index;
 
     [Header("Основные параметры")]
     public List<GameObject> objects;
@@ -53,6 +57,40 @@ public class PersonsController : MonoBehaviour
         }
     }
 
+    public void ChangeAllCharacterSkin()
+    {
+        if (playerPrefabForChangeSkin != null)
+        {
+            var persons = GetPersons();
+
+            foreach (var person in persons)
+            {
+                person.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = 
+                    playerPrefabForChangeSkin.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite;
+                
+                //Temp
+                person.transform.GetChild(0).GetComponent<SpriteRenderer>().color =
+                    playerPrefabForChangeSkin.transform.GetChild(0).GetComponent<SpriteRenderer>().color;
+            }
+        }
+    }
+
+    public void ChangeCharacterSkin()
+    {
+        if (playerPrefabForChangeSkin != null)
+        {
+            var persons = GetPersons();
+            var person = persons[index];
+
+            person.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite =
+                    playerPrefabForChangeSkin.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite;
+
+            //Temp
+            person.transform.GetChild(0).GetComponent<SpriteRenderer>().color =
+                playerPrefabForChangeSkin.transform.GetChild(0).GetComponent<SpriteRenderer>().color;
+        }
+    }
+
     // Изменение скина персонажа
     public void ChangeCharacterSkin(GameObject character, Sprite newSkin)
     {
@@ -79,6 +117,17 @@ public class PersonsController : MonoBehaviour
         Vector2 position = LevelEditor.GetPositionFromGrid(x, y);
         CharacterParams characterParams = character.GetComponent<CharacterParams>();
         characterParams.transform.position = position;
+    }
+
+    private List<GameObject> GetPersons()
+    {
+        var result = new List<GameObject>();
+        for (int i = 0; i < personsList.transform.childCount; i++)
+        {
+            result.Add(personsList.transform.GetChild(i).gameObject);
+        }
+
+        return result;
     }
 }
 

@@ -51,7 +51,7 @@ MonoBehaviour:
   jumpForce: 0
   spriteRenderer: {fileID: 0}
   colliderSize: {x: 0, y: 0}
-  movementDirection: {x: 0, y: 0}
+  movementDirection: 0
 --- !u!50 &4959478543595787571
 Rigidbody2D:
   serializedVersion: 4
@@ -78,7 +78,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &7957819461923586895
 BoxCollider2D:
   m_ObjectHideFlags: 0
