@@ -36,9 +36,14 @@ public class CharacterParams : MonoBehaviour
         transform.localScale = size;
     }
 
-    public void SetSprite(Sprite newSprite)
+    public void SetSprite(SpriteRenderer newSprite)
     {
-        spriteRenderer.sprite = newSprite;
+        spriteRenderer.sprite = newSprite.sprite;
+    }
+
+    public void SetColor(SpriteRenderer newSprite)
+    {
+        spriteRenderer.color = newSprite.color;
     }
 
     public void SetMovementDirection(int direction)

@@ -2,14 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.TextCore.Text;
+using static Unity.VisualScripting.Metadata;
 
 public class MoveController : MonoBehaviour
 {
     [SerializeField]
     private GameObject PersonsParent;
-    private List<CharacterParams> persons;
-    private List<Rigidbody2D> rigidbodies;
-    private List<Collider2D> colliders;
+    private List<CharacterParams> persons = new();
+    private List<Rigidbody2D> rigidbodies = new();
+    private List<Collider2D> colliders = new();
 
     private float moveInput;
 
@@ -17,9 +18,9 @@ public class MoveController : MonoBehaviour
 
     void Start()
     {
-        persons = GetChildren(PersonsParent);
-        rigidbodies = GetRigidbodies(PersonsParent);
-        colliders = GetColliders(PersonsParent);
+        persons = GetObjects<CharacterParams>(PersonsParent);
+        rigidbodies = GetObjects<Rigidbody2D>(PersonsParent);
+        colliders = GetObjects<Collider2D>(PersonsParent);
         count = persons.Count;
     }
 
@@ -27,10 +28,10 @@ public class MoveController : MonoBehaviour
     {
         if (count != PersonsParent.transform.childCount)
         {
-            persons = GetChildren(PersonsParent);
-            rigidbodies = GetRigidbodies(PersonsParent);
-            colliders = GetColliders(PersonsParent);
-            count = rigidbodies.Count;
+            persons = GetObjects<CharacterParams>(PersonsParent);
+            rigidbodies = GetObjects<Rigidbody2D>(PersonsParent);
+            colliders = GetObjects<Collider2D>(PersonsParent);
+            count = persons.Count;
 
             IgnoreCollision();
             Debug.Log(count);
@@ -51,45 +52,15 @@ public class MoveController : MonoBehaviour
         }
     }
 
-    // T GetColliders<T>(GameObject parent)
-
-    List<Collider2D> GetColliders(GameObject parent) 
+    List<T> GetObjects<T>(GameObject parent)
     {
-        List<Collider2D> children = new List<Collider2D>();
-
+        List<T> children = new List<T>();
         for (int i = 0; i < parent.transform.childCount; i++)
         {
-            var childTransform = parent.transform.GetChild(i).GetComponent<Collider2D>();
+            var childTransform = parent.transform.GetChild(i).GetComponent<T>();
             children.Add(childTransform);
         }
-
         return children;
-    }
-
-    List<CharacterParams> GetChildren(GameObject parent)
-    {
-        List<CharacterParams> children = new List<CharacterParams>();
-
-        for (int i = 0; i < parent.transform.childCount; i++)
-        {
-            var childTransform = parent.transform.GetChild(i).GetComponent<CharacterParams>();
-            children.Add(childTransform);
-        }
-
-        return children;
-    }
-
-    List<Rigidbody2D> GetRigidbodies(GameObject parent)
-    {
-        List<Rigidbody2D> rigidbodies = new List<Rigidbody2D>();
-
-        for (int i = 0; i < parent.transform.childCount; i++)
-        {
-            var childTransform = parent.transform.GetChild(i);
-            rigidbodies.Add(childTransform.GetComponent<Rigidbody2D>());
-        }
-
-        return rigidbodies;
     }
 
     private void TurnOffCollision(bool flag)

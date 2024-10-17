@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,8 +10,6 @@ public class PersonsController : MonoBehaviour
     private GameObject playerPrefab;
     [SerializeField]
     private GameObject playerPrefabForChangeSkin;
-    [HideInInspector]
-    public int index;
 
     [Header("Основные параметры")]
     public List<GameObject> objects;
@@ -34,11 +33,7 @@ public class PersonsController : MonoBehaviour
 
     void Start()
     {
-        //// Инициализация всех персонажей
-        //for (int i = 0; i < objects.Count; i++)
-        //{
-        //    AddCharacter(i, new Vector2(0, 0));
-        //}
+
     }
 
     public void CreateCharacter()
@@ -65,53 +60,53 @@ public class PersonsController : MonoBehaviour
 
             foreach (var person in persons)
             {
-                person.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = 
-                    playerPrefabForChangeSkin.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite;
-                
+                person.GetComponent<CharacterParams>()
+                    .SetSprite(playerPrefabForChangeSkin.transform.GetChild(0).GetComponent<SpriteRenderer>());
+
                 //Temp
-                person.transform.GetChild(0).GetComponent<SpriteRenderer>().color =
-                    playerPrefabForChangeSkin.transform.GetChild(0).GetComponent<SpriteRenderer>().color;
+                person.GetComponent<CharacterParams>()
+                    .SetColor(playerPrefabForChangeSkin.transform.GetChild(0).GetComponent<SpriteRenderer>());
             }
         }
     }
+
+    [HideInInspector]
+    public int index;
 
     public void ChangeCharacterSkin()
     {
         if (playerPrefabForChangeSkin != null)
         {
             var persons = GetPersons();
-            var person = persons[index];
+            try
+            {
+                var person = persons[index];
 
-            person.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite =
-                    playerPrefabForChangeSkin.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite;
+                person.GetComponent<CharacterParams>()
+                    .SetSprite(playerPrefabForChangeSkin.transform.GetChild(0).GetComponent<SpriteRenderer>());
 
-            //Temp
-            person.transform.GetChild(0).GetComponent<SpriteRenderer>().color =
-                playerPrefabForChangeSkin.transform.GetChild(0).GetComponent<SpriteRenderer>().color;
+                //Temp
+                person.GetComponent<CharacterParams>()
+                    .SetColor(playerPrefabForChangeSkin.transform.GetChild(0).GetComponent<SpriteRenderer>());
+            }
+            catch (ArgumentOutOfRangeException e) { }
         }
     }
 
-    // Изменение скина персонажа
-    public void ChangeCharacterSkin(GameObject character, Sprite newSkin)
+    public void ChangeCharacterSkin(GameObject character, SpriteRenderer newSkin)
     {
         CharacterParams characterParams = character.GetComponent<CharacterParams>();
         characterParams.SetSprite(newSkin);
     }
 
-    // Изменение направления движения
-    public void ChangeMovementDirection(GameObject character)
-    {
-        CharacterParams characterParams = character.GetComponent<CharacterParams>();
-        characterParams.ChangeMovementDirection();
-    }
-
-    public void ChangeMovementDirection(GameObject character, int direction)
+    // Direction change
+    public void ChangeMovementDirection(GameObject character, int direction = 1)
     {
         CharacterParams characterParams = character.GetComponent<CharacterParams>();
         characterParams.SetMovementDirection(direction);
     }
 
-    // Задание позиции на карте через LevelEditor
+    // Set position by LevelEditor
     public void SetCharacterPosition(GameObject character, int x, int y)
     {
         Vector2 position = LevelEditor.GetPositionFromGrid(x, y);
@@ -119,7 +114,7 @@ public class PersonsController : MonoBehaviour
         characterParams.transform.position = position;
     }
 
-    private List<GameObject> GetPersons()
+    public List<GameObject> GetPersons()
     {
         var result = new List<GameObject>();
         for (int i = 0; i < personsList.transform.childCount; i++)
