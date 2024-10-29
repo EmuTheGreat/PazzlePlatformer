@@ -7,11 +7,12 @@ public class PersonsController : MonoBehaviour
     [SerializeField]
     private GameObject personsList;
     [SerializeField]
+    private GameObject collideObjectsList;
+    [SerializeField]
     private GameObject playerPrefab;
     [SerializeField]
     private GameObject playerPrefabForChangeSkin;
 
-    [Header("Основные параметры")]
     public List<GameObject> objects;
     public Vector2 objectPosition = new Vector2(0, 0);
     public Vector2 colliderSize = new Vector2(1, 1);
@@ -27,7 +28,6 @@ public class PersonsController : MonoBehaviour
     public bool movementDirectionReverse = false;
 
 
-    [Header("Параметры коллизий")]
     public List<GameObject> collisionObjects; // Объекты для возможных столкновений
     public bool removeOnCollision = false;
 

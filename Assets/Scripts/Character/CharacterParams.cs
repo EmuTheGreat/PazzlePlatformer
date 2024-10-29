@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class CharacterParams : MonoBehaviour
 {
+    public Vector2 startPosition;
     public float movementSpeed;
     public float jumpForce;
     public SpriteRenderer spriteRenderer;
@@ -19,6 +20,7 @@ public class CharacterParams : MonoBehaviour
     void Start()
     {
         collider2D.size = new Vector2(1, 1);
+        startPosition = transform.position;
     }
 
     public void SetMovementSpeed(float speed)

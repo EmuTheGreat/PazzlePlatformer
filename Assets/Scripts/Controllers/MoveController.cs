@@ -22,6 +22,8 @@ public class MoveController : MonoBehaviour
         rigidbodies = GetObjects<Rigidbody2D>(PersonsParent);
         colliders = GetObjects<Collider2D>(PersonsParent);
         count = persons.Count;
+
+        IgnoreCollision();
     }
 
     void Update()
