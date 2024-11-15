@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6114725042182111493}
   - component: {fileID: 8381605368612494049}
   - component: {fileID: 4959478543595787571}
-  - component: {fileID: 7957819461923586895}
+  - component: {fileID: 2456612747955415434}
   m_Layer: 0
   m_Name: PersonBlue
   m_TagString: Player
@@ -80,7 +80,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!61 &7957819461923586895
+--- !u!61 &2456612747955415434
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

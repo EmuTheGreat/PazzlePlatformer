@@ -43,6 +43,8 @@ public class PersonsController : MonoBehaviour
             GameObject newCharacter = Instantiate(playerPrefab, objectPosition, Quaternion.identity, personsList.transform);
             CharacterParams characterParams = newCharacter.GetComponent<CharacterParams>();
 
+            SetCharacterPosition(newCharacter, (int)objectPosition.x, (int)objectPosition.y);
+
             characterParams.SetMovementSpeed(movementSpeed);
             characterParams.SetJumpForce(jumpForce);
             characterParams.SetColliderSize(colliderSize);
@@ -109,9 +111,12 @@ public class PersonsController : MonoBehaviour
     // Set position by LevelEditor
     public void SetCharacterPosition(GameObject character, int x, int y)
     {
-        Vector2 position = LevelEditor.GetPositionFromGrid(x, y);
+        LevelEditor levelEditor = FindObjectOfType<LevelEditor>();
+        Vector2 position = levelEditor.GetPositionFromGrid(x, y);
+
         CharacterParams characterParams = character.GetComponent<CharacterParams>();
         characterParams.transform.position = position;
+
     }
 
     public List<GameObject> GetPersons()
