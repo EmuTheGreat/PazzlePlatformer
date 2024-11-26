@@ -1,15 +1,18 @@
 using UnityEditor;
 using UnityEngine;
-using static LevelEditor;
 
 [CustomEditor(typeof(LevelEditor))]
 public class LevelEditorEditor : Editor
 {
     private LevelEditor levelEditor;
+    private GameObject selectedPrefab;
+
+    private const int ButtonSize = 20;
 
     private void OnEnable()
     {
         levelEditor = (LevelEditor)target;
+        selectedPrefab = null;
     }
 
     public override void OnInspectorGUI()
@@ -20,36 +23,83 @@ public class LevelEditorEditor : Editor
 
         if (GUILayout.Button("Create Level"))
         {
-            // Убедитесь, что уровень создается только один раз при нажатии на кнопку
             levelEditor.CreateLevel();
+        }
+
+        if (GUILayout.Button("Clear Level"))
+        {
+            levelEditor.ClearLevel();
+        }
+
+        if (GUILayout.Button("Clear Grid"))
+        {
+            ClearGrid();
         }
 
         GUILayout.Space(10);
 
-        // Рисуем сетку и делаем её интерактивной
+        GUILayout.Label("Select Prefab for Level:");
+
+        if (GUILayout.Button("Select Prefab"))
+        {
+            // Открываем меню выбора префаба
+            GenericMenu menu = new GenericMenu();
+
+            // Добавляем все префабы в меню
+            for (int i = 0; i < levelEditor.tilePrefabs.Length; i++)
+            {
+                int prefabIndex = i;
+                GameObject prefab = levelEditor.tilePrefabs[i];
+                menu.AddItem(new GUIContent(prefab.name), false, () =>
+                {
+                    selectedPrefab = prefab;
+                    Debug.Log("Selected prefab: " + selectedPrefab.name);
+                });
+            }
+
+            menu.AddItem(new GUIContent("Clear"), false, () =>
+            {
+                selectedPrefab = null;
+                Debug.Log("Selected prefab cleared.");
+            });
+
+            menu.ShowAsContext();
+        }
+
+        GUILayout.Space(10);
+
+        GUILayout.Label("Grid Editor");
+
+        GUILayout.Space(10);
+
+        // Рисуем сетку
         for (int y = levelEditor.gridHeight - 1; y >= 0; y--)
         {
             GUILayout.BeginHorizontal();
             for (int x = 0; x < levelEditor.gridWidth; x++)
             {
-                // Создаём кнопку для каждой ячейки массива
                 int index = levelEditor.GetArrayIndex(x, y);
-                TileType tileType = levelEditor.levelLayout[index];
-                string buttonLabel = tileType.ToString();
+                GameObject currentPrefab = levelEditor.levelLayout[index];
 
-                // Изменяем только тот тайл, на который нажали, без пересоздания уровня
-                if (GUILayout.Button(buttonLabel, GUILayout.Width(50), GUILayout.Height(50)))
+                string buttonLabel = currentPrefab != null ? currentPrefab.name : "-";
+
+                if (GUILayout.Button(buttonLabel, GUILayout.Width(ButtonSize), GUILayout.Height(ButtonSize)))
                 {
-                    // Обработка изменения типа тайла
-                    TileType newTileType = (TileType)(((int)tileType + 1) % System.Enum.GetValues(typeof(TileType)).Length);
-                    levelEditor.levelLayout[index] = newTileType;
-
-                    // Обновляем визуальное представление уровня
-                    levelEditor.CreateLevel();
+                    levelEditor.levelLayout[index] = selectedPrefab;
+                    EditorUtility.SetDirty(levelEditor);
                 }
             }
             GUILayout.EndHorizontal();
         }
+    }
+
+    private void ClearGrid()
+    {
+        for (int i = 0; i < levelEditor.levelLayout.Length; i++)
+        {
+            levelEditor.levelLayout[i] = null;
+        }
+        EditorUtility.SetDirty(levelEditor);
     }
 }
 
