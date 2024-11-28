@@ -463,7 +463,7 @@ TextureImporter:
   swizzle: 50462976
   cookieLightType: 0
   platformSettings:
-  - serializedVersion: 4
+  - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -476,8 +476,21 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
+  - serializedVersion: 3
     buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -506,7 +519,6 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
@@ -531,7 +543,6 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
@@ -556,7 +567,6 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
@@ -581,7 +591,6 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
@@ -606,7 +615,6 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
@@ -631,7 +639,6 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
@@ -656,7 +663,6 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
@@ -681,7 +687,6 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
@@ -706,7 +711,6 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
@@ -731,7 +735,6 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
@@ -756,7 +759,6 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
@@ -781,7 +783,6 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
@@ -806,7 +807,6 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
@@ -831,7 +831,6 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
@@ -856,7 +855,6 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
@@ -881,7 +879,6 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
@@ -906,7 +903,6 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
@@ -931,7 +927,6 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
@@ -956,7 +951,6 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
@@ -981,7 +975,6 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
@@ -1006,7 +999,6 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
@@ -1031,7 +1023,6 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
@@ -1056,7 +1047,6 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
@@ -1081,7 +1071,6 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
@@ -1106,7 +1095,6 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
@@ -1131,7 +1119,6 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
@@ -1156,7 +1143,6 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
@@ -1181,7 +1167,6 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
@@ -1206,7 +1191,6 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
@@ -1231,7 +1215,6 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
@@ -1256,7 +1239,6 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
@@ -1281,7 +1263,6 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
@@ -1306,7 +1287,6 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
@@ -1331,7 +1311,6 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
@@ -1356,7 +1335,6 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
@@ -1381,7 +1359,6 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
@@ -1406,7 +1383,6 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
@@ -1431,7 +1407,6 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
@@ -1456,7 +1431,6 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
@@ -1481,7 +1455,6 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
@@ -1506,7 +1479,6 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
@@ -1531,7 +1503,6 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
@@ -1556,7 +1527,6 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
@@ -1581,7 +1551,6 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
@@ -1606,7 +1575,6 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
@@ -1631,7 +1599,6 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
@@ -1656,7 +1623,6 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
@@ -1681,7 +1647,6 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
@@ -1706,7 +1671,6 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
@@ -1731,7 +1695,6 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
@@ -1756,7 +1719,6 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
@@ -1781,7 +1743,6 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
@@ -1806,7 +1767,6 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
@@ -1831,7 +1791,6 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
@@ -1856,7 +1815,6 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
@@ -1881,7 +1839,6 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
@@ -1906,7 +1863,6 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
@@ -1931,7 +1887,6 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
@@ -1956,7 +1911,6 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
@@ -1981,7 +1935,6 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
@@ -2006,7 +1959,6 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
@@ -2031,7 +1983,6 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
@@ -2056,7 +2007,6 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
@@ -2081,7 +2031,6 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
@@ -2106,7 +2055,6 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
@@ -2131,7 +2079,6 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
@@ -2143,7 +2090,6 @@ TextureImporter:
       edges: []
       weights: []
     outline: []
-    customData: 
     physicsShape: []
     bones: []
     spriteID: 
@@ -2153,9 +2099,73 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    spriteCustomMetadata:
-      entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      "\u2014 \u043F\u043E\u0438\u043D\u0442\u044B, \u043A\u043E\u0442\u043E\u0440\u044B\u0435 \u043F\u0435\u0440\u0435\u043D\u043E\u0441\u044F\u0442 \u043F\u0435\u0440\u0441\u043E\u043D\u0430\u0436\u0430 \u043D\u0430 \u0441\u043B\u0435\u0434. \u0443\u0440\u043E\u0432\u0435\u043D\u044C (\u0443\u0434\u0430\u043B\u044F\u044E\u0442 \u0441\u043E \u0441\u0446\u0435\u043D\u044B)-1_0": -6042727367222799792
+      "\u2014 \u043F\u043E\u0438\u043D\u0442\u044B, \u043A\u043E\u0442\u043E\u0440\u044B\u0435 \u043F\u0435\u0440\u0435\u043D\u043E\u0441\u044F\u0442 \u043F\u0435\u0440\u0441\u043E\u043D\u0430\u0436\u0430 \u043D\u0430 \u0441\u043B\u0435\u0434. \u0443\u0440\u043E\u0432\u0435\u043D\u044C (\u0443\u0434\u0430\u043B\u044F\u044E\u0442 \u0441\u043E \u0441\u0446\u0435\u043D\u044B)-1_1": 6877915273058805278
+      "\u2014 \u043F\u043E\u0438\u043D\u0442\u044B, \u043A\u043E\u0442\u043E\u0440\u044B\u0435 \u043F\u0435\u0440\u0435\u043D\u043E\u0441\u044F\u0442 \u043F\u0435\u0440\u0441\u043E\u043D\u0430\u0436\u0430 \u043D\u0430 \u0441\u043B\u0435\u0434. \u0443\u0440\u043E\u0432\u0435\u043D\u044C (\u0443\u0434\u0430\u043B\u044F\u044E\u0442 \u0441\u043E \u0441\u0446\u0435\u043D\u044B)-1_10": -7632988588067684610
+      "\u2014 \u043F\u043E\u0438\u043D\u0442\u044B, \u043A\u043E\u0442\u043E\u0440\u044B\u0435 \u043F\u0435\u0440\u0435\u043D\u043E\u0441\u044F\u0442 \u043F\u0435\u0440\u0441\u043E\u043D\u0430\u0436\u0430 \u043D\u0430 \u0441\u043B\u0435\u0434. \u0443\u0440\u043E\u0432\u0435\u043D\u044C (\u0443\u0434\u0430\u043B\u044F\u044E\u0442 \u0441\u043E \u0441\u0446\u0435\u043D\u044B)-1_11": 1196741655979736814
+      "\u2014 \u043F\u043E\u0438\u043D\u0442\u044B, \u043A\u043E\u0442\u043E\u0440\u044B\u0435 \u043F\u0435\u0440\u0435\u043D\u043E\u0441\u044F\u0442 \u043F\u0435\u0440\u0441\u043E\u043D\u0430\u0436\u0430 \u043D\u0430 \u0441\u043B\u0435\u0434. \u0443\u0440\u043E\u0432\u0435\u043D\u044C (\u0443\u0434\u0430\u043B\u044F\u044E\u0442 \u0441\u043E \u0441\u0446\u0435\u043D\u044B)-1_12": -4020839644114851946
+      "\u2014 \u043F\u043E\u0438\u043D\u0442\u044B, \u043A\u043E\u0442\u043E\u0440\u044B\u0435 \u043F\u0435\u0440\u0435\u043D\u043E\u0441\u044F\u0442 \u043F\u0435\u0440\u0441\u043E\u043D\u0430\u0436\u0430 \u043D\u0430 \u0441\u043B\u0435\u0434. \u0443\u0440\u043E\u0432\u0435\u043D\u044C (\u0443\u0434\u0430\u043B\u044F\u044E\u0442 \u0441\u043E \u0441\u0446\u0435\u043D\u044B)-1_13": -8764444844242041526
+      "\u2014 \u043F\u043E\u0438\u043D\u0442\u044B, \u043A\u043E\u0442\u043E\u0440\u044B\u0435 \u043F\u0435\u0440\u0435\u043D\u043E\u0441\u044F\u0442 \u043F\u0435\u0440\u0441\u043E\u043D\u0430\u0436\u0430 \u043D\u0430 \u0441\u043B\u0435\u0434. \u0443\u0440\u043E\u0432\u0435\u043D\u044C (\u0443\u0434\u0430\u043B\u044F\u044E\u0442 \u0441\u043E \u0441\u0446\u0435\u043D\u044B)-1_14": -3833882349650002562
+      "\u2014 \u043F\u043E\u0438\u043D\u0442\u044B, \u043A\u043E\u0442\u043E\u0440\u044B\u0435 \u043F\u0435\u0440\u0435\u043D\u043E\u0441\u044F\u0442 \u043F\u0435\u0440\u0441\u043E\u043D\u0430\u0436\u0430 \u043D\u0430 \u0441\u043B\u0435\u0434. \u0443\u0440\u043E\u0432\u0435\u043D\u044C (\u0443\u0434\u0430\u043B\u044F\u044E\u0442 \u0441\u043E \u0441\u0446\u0435\u043D\u044B)-1_15": 4494233617041703960
+      "\u2014 \u043F\u043E\u0438\u043D\u0442\u044B, \u043A\u043E\u0442\u043E\u0440\u044B\u0435 \u043F\u0435\u0440\u0435\u043D\u043E\u0441\u044F\u0442 \u043F\u0435\u0440\u0441\u043E\u043D\u0430\u0436\u0430 \u043D\u0430 \u0441\u043B\u0435\u0434. \u0443\u0440\u043E\u0432\u0435\u043D\u044C (\u0443\u0434\u0430\u043B\u044F\u044E\u0442 \u0441\u043E \u0441\u0446\u0435\u043D\u044B)-1_16": -5070387538780387142
+      "\u2014 \u043F\u043E\u0438\u043D\u0442\u044B, \u043A\u043E\u0442\u043E\u0440\u044B\u0435 \u043F\u0435\u0440\u0435\u043D\u043E\u0441\u044F\u0442 \u043F\u0435\u0440\u0441\u043E\u043D\u0430\u0436\u0430 \u043D\u0430 \u0441\u043B\u0435\u0434. \u0443\u0440\u043E\u0432\u0435\u043D\u044C (\u0443\u0434\u0430\u043B\u044F\u044E\u0442 \u0441\u043E \u0441\u0446\u0435\u043D\u044B)-1_17": 4203691852824856622
+      "\u2014 \u043F\u043E\u0438\u043D\u0442\u044B, \u043A\u043E\u0442\u043E\u0440\u044B\u0435 \u043F\u0435\u0440\u0435\u043D\u043E\u0441\u044F\u0442 \u043F\u0435\u0440\u0441\u043E\u043D\u0430\u0436\u0430 \u043D\u0430 \u0441\u043B\u0435\u0434. \u0443\u0440\u043E\u0432\u0435\u043D\u044C (\u0443\u0434\u0430\u043B\u044F\u044E\u0442 \u0441\u043E \u0441\u0446\u0435\u043D\u044B)-1_18": 2955580481805163912
+      "\u2014 \u043F\u043E\u0438\u043D\u0442\u044B, \u043A\u043E\u0442\u043E\u0440\u044B\u0435 \u043F\u0435\u0440\u0435\u043D\u043E\u0441\u044F\u0442 \u043F\u0435\u0440\u0441\u043E\u043D\u0430\u0436\u0430 \u043D\u0430 \u0441\u043B\u0435\u0434. \u0443\u0440\u043E\u0432\u0435\u043D\u044C (\u0443\u0434\u0430\u043B\u044F\u044E\u0442 \u0441\u043E \u0441\u0446\u0435\u043D\u044B)-1_19": 5109208281228330968
+      "\u2014 \u043F\u043E\u0438\u043D\u0442\u044B, \u043A\u043E\u0442\u043E\u0440\u044B\u0435 \u043F\u0435\u0440\u0435\u043D\u043E\u0441\u044F\u0442 \u043F\u0435\u0440\u0441\u043E\u043D\u0430\u0436\u0430 \u043D\u0430 \u0441\u043B\u0435\u0434. \u0443\u0440\u043E\u0432\u0435\u043D\u044C (\u0443\u0434\u0430\u043B\u044F\u044E\u0442 \u0441\u043E \u0441\u0446\u0435\u043D\u044B)-1_2": 1559770003690528147
+      "\u2014 \u043F\u043E\u0438\u043D\u0442\u044B, \u043A\u043E\u0442\u043E\u0440\u044B\u0435 \u043F\u0435\u0440\u0435\u043D\u043E\u0441\u044F\u0442 \u043F\u0435\u0440\u0441\u043E\u043D\u0430\u0436\u0430 \u043D\u0430 \u0441\u043B\u0435\u0434. \u0443\u0440\u043E\u0432\u0435\u043D\u044C (\u0443\u0434\u0430\u043B\u044F\u044E\u0442 \u0441\u043E \u0441\u0446\u0435\u043D\u044B)-1_20": -2284747229732960622
+      "\u2014 \u043F\u043E\u0438\u043D\u0442\u044B, \u043A\u043E\u0442\u043E\u0440\u044B\u0435 \u043F\u0435\u0440\u0435\u043D\u043E\u0441\u044F\u0442 \u043F\u0435\u0440\u0441\u043E\u043D\u0430\u0436\u0430 \u043D\u0430 \u0441\u043B\u0435\u0434. \u0443\u0440\u043E\u0432\u0435\u043D\u044C (\u0443\u0434\u0430\u043B\u044F\u044E\u0442 \u0441\u043E \u0441\u0446\u0435\u043D\u044B)-1_21": 2580105971110368786
+      "\u2014 \u043F\u043E\u0438\u043D\u0442\u044B, \u043A\u043E\u0442\u043E\u0440\u044B\u0435 \u043F\u0435\u0440\u0435\u043D\u043E\u0441\u044F\u0442 \u043F\u0435\u0440\u0441\u043E\u043D\u0430\u0436\u0430 \u043D\u0430 \u0441\u043B\u0435\u0434. \u0443\u0440\u043E\u0432\u0435\u043D\u044C (\u0443\u0434\u0430\u043B\u044F\u044E\u0442 \u0441\u043E \u0441\u0446\u0435\u043D\u044B)-1_22": 8500583107998380815
+      "\u2014 \u043F\u043E\u0438\u043D\u0442\u044B, \u043A\u043E\u0442\u043E\u0440\u044B\u0435 \u043F\u0435\u0440\u0435\u043D\u043E\u0441\u044F\u0442 \u043F\u0435\u0440\u0441\u043E\u043D\u0430\u0436\u0430 \u043D\u0430 \u0441\u043B\u0435\u0434. \u0443\u0440\u043E\u0432\u0435\u043D\u044C (\u0443\u0434\u0430\u043B\u044F\u044E\u0442 \u0441\u043E \u0441\u0446\u0435\u043D\u044B)-1_23": -7300503231288924750
+      "\u2014 \u043F\u043E\u0438\u043D\u0442\u044B, \u043A\u043E\u0442\u043E\u0440\u044B\u0435 \u043F\u0435\u0440\u0435\u043D\u043E\u0441\u044F\u0442 \u043F\u0435\u0440\u0441\u043E\u043D\u0430\u0436\u0430 \u043D\u0430 \u0441\u043B\u0435\u0434. \u0443\u0440\u043E\u0432\u0435\u043D\u044C (\u0443\u0434\u0430\u043B\u044F\u044E\u0442 \u0441\u043E \u0441\u0446\u0435\u043D\u044B)-1_24": 7830600598662642355
+      "\u2014 \u043F\u043E\u0438\u043D\u0442\u044B, \u043A\u043E\u0442\u043E\u0440\u044B\u0435 \u043F\u0435\u0440\u0435\u043D\u043E\u0441\u044F\u0442 \u043F\u0435\u0440\u0441\u043E\u043D\u0430\u0436\u0430 \u043D\u0430 \u0441\u043B\u0435\u0434. \u0443\u0440\u043E\u0432\u0435\u043D\u044C (\u0443\u0434\u0430\u043B\u044F\u044E\u0442 \u0441\u043E \u0441\u0446\u0435\u043D\u044B)-1_25": 2684292951147138446
+      "\u2014 \u043F\u043E\u0438\u043D\u0442\u044B, \u043A\u043E\u0442\u043E\u0440\u044B\u0435 \u043F\u0435\u0440\u0435\u043D\u043E\u0441\u044F\u0442 \u043F\u0435\u0440\u0441\u043E\u043D\u0430\u0436\u0430 \u043D\u0430 \u0441\u043B\u0435\u0434. \u0443\u0440\u043E\u0432\u0435\u043D\u044C (\u0443\u0434\u0430\u043B\u044F\u044E\u0442 \u0441\u043E \u0441\u0446\u0435\u043D\u044B)-1_26": -3899700139154993525
+      "\u2014 \u043F\u043E\u0438\u043D\u0442\u044B, \u043A\u043E\u0442\u043E\u0440\u044B\u0435 \u043F\u0435\u0440\u0435\u043D\u043E\u0441\u044F\u0442 \u043F\u0435\u0440\u0441\u043E\u043D\u0430\u0436\u0430 \u043D\u0430 \u0441\u043B\u0435\u0434. \u0443\u0440\u043E\u0432\u0435\u043D\u044C (\u0443\u0434\u0430\u043B\u044F\u044E\u0442 \u0441\u043E \u0441\u0446\u0435\u043D\u044B)-1_27": -2561690087493689390
+      "\u2014 \u043F\u043E\u0438\u043D\u0442\u044B, \u043A\u043E\u0442\u043E\u0440\u044B\u0435 \u043F\u0435\u0440\u0435\u043D\u043E\u0441\u044F\u0442 \u043F\u0435\u0440\u0441\u043E\u043D\u0430\u0436\u0430 \u043D\u0430 \u0441\u043B\u0435\u0434. \u0443\u0440\u043E\u0432\u0435\u043D\u044C (\u0443\u0434\u0430\u043B\u044F\u044E\u0442 \u0441\u043E \u0441\u0446\u0435\u043D\u044B)-1_28": -7602142721998342963
+      "\u2014 \u043F\u043E\u0438\u043D\u0442\u044B, \u043A\u043E\u0442\u043E\u0440\u044B\u0435 \u043F\u0435\u0440\u0435\u043D\u043E\u0441\u044F\u0442 \u043F\u0435\u0440\u0441\u043E\u043D\u0430\u0436\u0430 \u043D\u0430 \u0441\u043B\u0435\u0434. \u0443\u0440\u043E\u0432\u0435\u043D\u044C (\u0443\u0434\u0430\u043B\u044F\u044E\u0442 \u0441\u043E \u0441\u0446\u0435\u043D\u044B)-1_29": -5078515982228548793
+      "\u2014 \u043F\u043E\u0438\u043D\u0442\u044B, \u043A\u043E\u0442\u043E\u0440\u044B\u0435 \u043F\u0435\u0440\u0435\u043D\u043E\u0441\u044F\u0442 \u043F\u0435\u0440\u0441\u043E\u043D\u0430\u0436\u0430 \u043D\u0430 \u0441\u043B\u0435\u0434. \u0443\u0440\u043E\u0432\u0435\u043D\u044C (\u0443\u0434\u0430\u043B\u044F\u044E\u0442 \u0441\u043E \u0441\u0446\u0435\u043D\u044B)-1_3": -7697981033304579392
+      "\u2014 \u043F\u043E\u0438\u043D\u0442\u044B, \u043A\u043E\u0442\u043E\u0440\u044B\u0435 \u043F\u0435\u0440\u0435\u043D\u043E\u0441\u044F\u0442 \u043F\u0435\u0440\u0441\u043E\u043D\u0430\u0436\u0430 \u043D\u0430 \u0441\u043B\u0435\u0434. \u0443\u0440\u043E\u0432\u0435\u043D\u044C (\u0443\u0434\u0430\u043B\u044F\u044E\u0442 \u0441\u043E \u0441\u0446\u0435\u043D\u044B)-1_30": 4523618009061910241
+      "\u2014 \u043F\u043E\u0438\u043D\u0442\u044B, \u043A\u043E\u0442\u043E\u0440\u044B\u0435 \u043F\u0435\u0440\u0435\u043D\u043E\u0441\u044F\u0442 \u043F\u0435\u0440\u0441\u043E\u043D\u0430\u0436\u0430 \u043D\u0430 \u0441\u043B\u0435\u0434. \u0443\u0440\u043E\u0432\u0435\u043D\u044C (\u0443\u0434\u0430\u043B\u044F\u044E\u0442 \u0441\u043E \u0441\u0446\u0435\u043D\u044B)-1_31": -6783577674779256406
+      "\u2014 \u043F\u043E\u0438\u043D\u0442\u044B, \u043A\u043E\u0442\u043E\u0440\u044B\u0435 \u043F\u0435\u0440\u0435\u043D\u043E\u0441\u044F\u0442 \u043F\u0435\u0440\u0441\u043E\u043D\u0430\u0436\u0430 \u043D\u0430 \u0441\u043B\u0435\u0434. \u0443\u0440\u043E\u0432\u0435\u043D\u044C (\u0443\u0434\u0430\u043B\u044F\u044E\u0442 \u0441\u043E \u0441\u0446\u0435\u043D\u044B)-1_32": 7631966232756508337
+      "\u2014 \u043F\u043E\u0438\u043D\u0442\u044B, \u043A\u043E\u0442\u043E\u0440\u044B\u0435 \u043F\u0435\u0440\u0435\u043D\u043E\u0441\u044F\u0442 \u043F\u0435\u0440\u0441\u043E\u043D\u0430\u0436\u0430 \u043D\u0430 \u0441\u043B\u0435\u0434. \u0443\u0440\u043E\u0432\u0435\u043D\u044C (\u0443\u0434\u0430\u043B\u044F\u044E\u0442 \u0441\u043E \u0441\u0446\u0435\u043D\u044B)-1_33": -9051641061842983108
+      "\u2014 \u043F\u043E\u0438\u043D\u0442\u044B, \u043A\u043E\u0442\u043E\u0440\u044B\u0435 \u043F\u0435\u0440\u0435\u043D\u043E\u0441\u044F\u0442 \u043F\u0435\u0440\u0441\u043E\u043D\u0430\u0436\u0430 \u043D\u0430 \u0441\u043B\u0435\u0434. \u0443\u0440\u043E\u0432\u0435\u043D\u044C (\u0443\u0434\u0430\u043B\u044F\u044E\u0442 \u0441\u043E \u0441\u0446\u0435\u043D\u044B)-1_34": 1838017603253888729
+      "\u2014 \u043F\u043E\u0438\u043D\u0442\u044B, \u043A\u043E\u0442\u043E\u0440\u044B\u0435 \u043F\u0435\u0440\u0435\u043D\u043E\u0441\u044F\u0442 \u043F\u0435\u0440\u0441\u043E\u043D\u0430\u0436\u0430 \u043D\u0430 \u0441\u043B\u0435\u0434. \u0443\u0440\u043E\u0432\u0435\u043D\u044C (\u0443\u0434\u0430\u043B\u044F\u044E\u0442 \u0441\u043E \u0441\u0446\u0435\u043D\u044B)-1_35": 1975247075110784796
+      "\u2014 \u043F\u043E\u0438\u043D\u0442\u044B, \u043A\u043E\u0442\u043E\u0440\u044B\u0435 \u043F\u0435\u0440\u0435\u043D\u043E\u0441\u044F\u0442 \u043F\u0435\u0440\u0441\u043E\u043D\u0430\u0436\u0430 \u043D\u0430 \u0441\u043B\u0435\u0434. \u0443\u0440\u043E\u0432\u0435\u043D\u044C (\u0443\u0434\u0430\u043B\u044F\u044E\u0442 \u0441\u043E \u0441\u0446\u0435\u043D\u044B)-1_36": 2474693687771504014
+      "\u2014 \u043F\u043E\u0438\u043D\u0442\u044B, \u043A\u043E\u0442\u043E\u0440\u044B\u0435 \u043F\u0435\u0440\u0435\u043D\u043E\u0441\u044F\u0442 \u043F\u0435\u0440\u0441\u043E\u043D\u0430\u0436\u0430 \u043D\u0430 \u0441\u043B\u0435\u0434. \u0443\u0440\u043E\u0432\u0435\u043D\u044C (\u0443\u0434\u0430\u043B\u044F\u044E\u0442 \u0441\u043E \u0441\u0446\u0435\u043D\u044B)-1_37": 3565545572126410457
+      "\u2014 \u043F\u043E\u0438\u043D\u0442\u044B, \u043A\u043E\u0442\u043E\u0440\u044B\u0435 \u043F\u0435\u0440\u0435\u043D\u043E\u0441\u044F\u0442 \u043F\u0435\u0440\u0441\u043E\u043D\u0430\u0436\u0430 \u043D\u0430 \u0441\u043B\u0435\u0434. \u0443\u0440\u043E\u0432\u0435\u043D\u044C (\u0443\u0434\u0430\u043B\u044F\u044E\u0442 \u0441\u043E \u0441\u0446\u0435\u043D\u044B)-1_38": -6553514425653359314
+      "\u2014 \u043F\u043E\u0438\u043D\u0442\u044B, \u043A\u043E\u0442\u043E\u0440\u044B\u0435 \u043F\u0435\u0440\u0435\u043D\u043E\u0441\u044F\u0442 \u043F\u0435\u0440\u0441\u043E\u043D\u0430\u0436\u0430 \u043D\u0430 \u0441\u043B\u0435\u0434. \u0443\u0440\u043E\u0432\u0435\u043D\u044C (\u0443\u0434\u0430\u043B\u044F\u044E\u0442 \u0441\u043E \u0441\u0446\u0435\u043D\u044B)-1_39": -3690692046222943452
+      "\u2014 \u043F\u043E\u0438\u043D\u0442\u044B, \u043A\u043E\u0442\u043E\u0440\u044B\u0435 \u043F\u0435\u0440\u0435\u043D\u043E\u0441\u044F\u0442 \u043F\u0435\u0440\u0441\u043E\u043D\u0430\u0436\u0430 \u043D\u0430 \u0441\u043B\u0435\u0434. \u0443\u0440\u043E\u0432\u0435\u043D\u044C (\u0443\u0434\u0430\u043B\u044F\u044E\u0442 \u0441\u043E \u0441\u0446\u0435\u043D\u044B)-1_4": 3956686475005203059
+      "\u2014 \u043F\u043E\u0438\u043D\u0442\u044B, \u043A\u043E\u0442\u043E\u0440\u044B\u0435 \u043F\u0435\u0440\u0435\u043D\u043E\u0441\u044F\u0442 \u043F\u0435\u0440\u0441\u043E\u043D\u0430\u0436\u0430 \u043D\u0430 \u0441\u043B\u0435\u0434. \u0443\u0440\u043E\u0432\u0435\u043D\u044C (\u0443\u0434\u0430\u043B\u044F\u044E\u0442 \u0441\u043E \u0441\u0446\u0435\u043D\u044B)-1_40": 449248190139492099
+      "\u2014 \u043F\u043E\u0438\u043D\u0442\u044B, \u043A\u043E\u0442\u043E\u0440\u044B\u0435 \u043F\u0435\u0440\u0435\u043D\u043E\u0441\u044F\u0442 \u043F\u0435\u0440\u0441\u043E\u043D\u0430\u0436\u0430 \u043D\u0430 \u0441\u043B\u0435\u0434. \u0443\u0440\u043E\u0432\u0435\u043D\u044C (\u0443\u0434\u0430\u043B\u044F\u044E\u0442 \u0441\u043E \u0441\u0446\u0435\u043D\u044B)-1_41": 5859372140201849283
+      "\u2014 \u043F\u043E\u0438\u043D\u0442\u044B, \u043A\u043E\u0442\u043E\u0440\u044B\u0435 \u043F\u0435\u0440\u0435\u043D\u043E\u0441\u044F\u0442 \u043F\u0435\u0440\u0441\u043E\u043D\u0430\u0436\u0430 \u043D\u0430 \u0441\u043B\u0435\u0434. \u0443\u0440\u043E\u0432\u0435\u043D\u044C (\u0443\u0434\u0430\u043B\u044F\u044E\u0442 \u0441\u043E \u0441\u0446\u0435\u043D\u044B)-1_42": -5702018590066800460
+      "\u2014 \u043F\u043E\u0438\u043D\u0442\u044B, \u043A\u043E\u0442\u043E\u0440\u044B\u0435 \u043F\u0435\u0440\u0435\u043D\u043E\u0441\u044F\u0442 \u043F\u0435\u0440\u0441\u043E\u043D\u0430\u0436\u0430 \u043D\u0430 \u0441\u043B\u0435\u0434. \u0443\u0440\u043E\u0432\u0435\u043D\u044C (\u0443\u0434\u0430\u043B\u044F\u044E\u0442 \u0441\u043E \u0441\u0446\u0435\u043D\u044B)-1_43": 4647259982642595732
+      "\u2014 \u043F\u043E\u0438\u043D\u0442\u044B, \u043A\u043E\u0442\u043E\u0440\u044B\u0435 \u043F\u0435\u0440\u0435\u043D\u043E\u0441\u044F\u0442 \u043F\u0435\u0440\u0441\u043E\u043D\u0430\u0436\u0430 \u043D\u0430 \u0441\u043B\u0435\u0434. \u0443\u0440\u043E\u0432\u0435\u043D\u044C (\u0443\u0434\u0430\u043B\u044F\u044E\u0442 \u0441\u043E \u0441\u0446\u0435\u043D\u044B)-1_44": 7855011712000991944
+      "\u2014 \u043F\u043E\u0438\u043D\u0442\u044B, \u043A\u043E\u0442\u043E\u0440\u044B\u0435 \u043F\u0435\u0440\u0435\u043D\u043E\u0441\u044F\u0442 \u043F\u0435\u0440\u0441\u043E\u043D\u0430\u0436\u0430 \u043D\u0430 \u0441\u043B\u0435\u0434. \u0443\u0440\u043E\u0432\u0435\u043D\u044C (\u0443\u0434\u0430\u043B\u044F\u044E\u0442 \u0441\u043E \u0441\u0446\u0435\u043D\u044B)-1_45": -1132814875293402203
+      "\u2014 \u043F\u043E\u0438\u043D\u0442\u044B, \u043A\u043E\u0442\u043E\u0440\u044B\u0435 \u043F\u0435\u0440\u0435\u043D\u043E\u0441\u044F\u0442 \u043F\u0435\u0440\u0441\u043E\u043D\u0430\u0436\u0430 \u043D\u0430 \u0441\u043B\u0435\u0434. \u0443\u0440\u043E\u0432\u0435\u043D\u044C (\u0443\u0434\u0430\u043B\u044F\u044E\u0442 \u0441\u043E \u0441\u0446\u0435\u043D\u044B)-1_46": 7280894252478631026
+      "\u2014 \u043F\u043E\u0438\u043D\u0442\u044B, \u043A\u043E\u0442\u043E\u0440\u044B\u0435 \u043F\u0435\u0440\u0435\u043D\u043E\u0441\u044F\u0442 \u043F\u0435\u0440\u0441\u043E\u043D\u0430\u0436\u0430 \u043D\u0430 \u0441\u043B\u0435\u0434. \u0443\u0440\u043E\u0432\u0435\u043D\u044C (\u0443\u0434\u0430\u043B\u044F\u044E\u0442 \u0441\u043E \u0441\u0446\u0435\u043D\u044B)-1_47": 7098134651852514475
+      "\u2014 \u043F\u043E\u0438\u043D\u0442\u044B, \u043A\u043E\u0442\u043E\u0440\u044B\u0435 \u043F\u0435\u0440\u0435\u043D\u043E\u0441\u044F\u0442 \u043F\u0435\u0440\u0441\u043E\u043D\u0430\u0436\u0430 \u043D\u0430 \u0441\u043B\u0435\u0434. \u0443\u0440\u043E\u0432\u0435\u043D\u044C (\u0443\u0434\u0430\u043B\u044F\u044E\u0442 \u0441\u043E \u0441\u0446\u0435\u043D\u044B)-1_48": -1230491551625359321
+      "\u2014 \u043F\u043E\u0438\u043D\u0442\u044B, \u043A\u043E\u0442\u043E\u0440\u044B\u0435 \u043F\u0435\u0440\u0435\u043D\u043E\u0441\u044F\u0442 \u043F\u0435\u0440\u0441\u043E\u043D\u0430\u0436\u0430 \u043D\u0430 \u0441\u043B\u0435\u0434. \u0443\u0440\u043E\u0432\u0435\u043D\u044C (\u0443\u0434\u0430\u043B\u044F\u044E\u0442 \u0441\u043E \u0441\u0446\u0435\u043D\u044B)-1_49": 6495299464447266783
+      "\u2014 \u043F\u043E\u0438\u043D\u0442\u044B, \u043A\u043E\u0442\u043E\u0440\u044B\u0435 \u043F\u0435\u0440\u0435\u043D\u043E\u0441\u044F\u0442 \u043F\u0435\u0440\u0441\u043E\u043D\u0430\u0436\u0430 \u043D\u0430 \u0441\u043B\u0435\u0434. \u0443\u0440\u043E\u0432\u0435\u043D\u044C (\u0443\u0434\u0430\u043B\u044F\u044E\u0442 \u0441\u043E \u0441\u0446\u0435\u043D\u044B)-1_5": -385256679244112398
+      "\u2014 \u043F\u043E\u0438\u043D\u0442\u044B, \u043A\u043E\u0442\u043E\u0440\u044B\u0435 \u043F\u0435\u0440\u0435\u043D\u043E\u0441\u044F\u0442 \u043F\u0435\u0440\u0441\u043E\u043D\u0430\u0436\u0430 \u043D\u0430 \u0441\u043B\u0435\u0434. \u0443\u0440\u043E\u0432\u0435\u043D\u044C (\u0443\u0434\u0430\u043B\u044F\u044E\u0442 \u0441\u043E \u0441\u0446\u0435\u043D\u044B)-1_50": -1576921558043943726
+      "\u2014 \u043F\u043E\u0438\u043D\u0442\u044B, \u043A\u043E\u0442\u043E\u0440\u044B\u0435 \u043F\u0435\u0440\u0435\u043D\u043E\u0441\u044F\u0442 \u043F\u0435\u0440\u0441\u043E\u043D\u0430\u0436\u0430 \u043D\u0430 \u0441\u043B\u0435\u0434. \u0443\u0440\u043E\u0432\u0435\u043D\u044C (\u0443\u0434\u0430\u043B\u044F\u044E\u0442 \u0441\u043E \u0441\u0446\u0435\u043D\u044B)-1_51": 7994904312484858061
+      "\u2014 \u043F\u043E\u0438\u043D\u0442\u044B, \u043A\u043E\u0442\u043E\u0440\u044B\u0435 \u043F\u0435\u0440\u0435\u043D\u043E\u0441\u044F\u0442 \u043F\u0435\u0440\u0441\u043E\u043D\u0430\u0436\u0430 \u043D\u0430 \u0441\u043B\u0435\u0434. \u0443\u0440\u043E\u0432\u0435\u043D\u044C (\u0443\u0434\u0430\u043B\u044F\u044E\u0442 \u0441\u043E \u0441\u0446\u0435\u043D\u044B)-1_52": -7264587892888986765
+      "\u2014 \u043F\u043E\u0438\u043D\u0442\u044B, \u043A\u043E\u0442\u043E\u0440\u044B\u0435 \u043F\u0435\u0440\u0435\u043D\u043E\u0441\u044F\u0442 \u043F\u0435\u0440\u0441\u043E\u043D\u0430\u0436\u0430 \u043D\u0430 \u0441\u043B\u0435\u0434. \u0443\u0440\u043E\u0432\u0435\u043D\u044C (\u0443\u0434\u0430\u043B\u044F\u044E\u0442 \u0441\u043E \u0441\u0446\u0435\u043D\u044B)-1_53": 4153125050964867737
+      "\u2014 \u043F\u043E\u0438\u043D\u0442\u044B, \u043A\u043E\u0442\u043E\u0440\u044B\u0435 \u043F\u0435\u0440\u0435\u043D\u043E\u0441\u044F\u0442 \u043F\u0435\u0440\u0441\u043E\u043D\u0430\u0436\u0430 \u043D\u0430 \u0441\u043B\u0435\u0434. \u0443\u0440\u043E\u0432\u0435\u043D\u044C (\u0443\u0434\u0430\u043B\u044F\u044E\u0442 \u0441\u043E \u0441\u0446\u0435\u043D\u044B)-1_54": -3347636895600045565
+      "\u2014 \u043F\u043E\u0438\u043D\u0442\u044B, \u043A\u043E\u0442\u043E\u0440\u044B\u0435 \u043F\u0435\u0440\u0435\u043D\u043E\u0441\u044F\u0442 \u043F\u0435\u0440\u0441\u043E\u043D\u0430\u0436\u0430 \u043D\u0430 \u0441\u043B\u0435\u0434. \u0443\u0440\u043E\u0432\u0435\u043D\u044C (\u0443\u0434\u0430\u043B\u044F\u044E\u0442 \u0441\u043E \u0441\u0446\u0435\u043D\u044B)-1_55": -4980056912721773510
+      "\u2014 \u043F\u043E\u0438\u043D\u0442\u044B, \u043A\u043E\u0442\u043E\u0440\u044B\u0435 \u043F\u0435\u0440\u0435\u043D\u043E\u0441\u044F\u0442 \u043F\u0435\u0440\u0441\u043E\u043D\u0430\u0436\u0430 \u043D\u0430 \u0441\u043B\u0435\u0434. \u0443\u0440\u043E\u0432\u0435\u043D\u044C (\u0443\u0434\u0430\u043B\u044F\u044E\u0442 \u0441\u043E \u0441\u0446\u0435\u043D\u044B)-1_56": 1612916127761110286
+      "\u2014 \u043F\u043E\u0438\u043D\u0442\u044B, \u043A\u043E\u0442\u043E\u0440\u044B\u0435 \u043F\u0435\u0440\u0435\u043D\u043E\u0441\u044F\u0442 \u043F\u0435\u0440\u0441\u043E\u043D\u0430\u0436\u0430 \u043D\u0430 \u0441\u043B\u0435\u0434. \u0443\u0440\u043E\u0432\u0435\u043D\u044C (\u0443\u0434\u0430\u043B\u044F\u044E\u0442 \u0441\u043E \u0441\u0446\u0435\u043D\u044B)-1_57": 8418499969403056079
+      "\u2014 \u043F\u043E\u0438\u043D\u0442\u044B, \u043A\u043E\u0442\u043E\u0440\u044B\u0435 \u043F\u0435\u0440\u0435\u043D\u043E\u0441\u044F\u0442 \u043F\u0435\u0440\u0441\u043E\u043D\u0430\u0436\u0430 \u043D\u0430 \u0441\u043B\u0435\u0434. \u0443\u0440\u043E\u0432\u0435\u043D\u044C (\u0443\u0434\u0430\u043B\u044F\u044E\u0442 \u0441\u043E \u0441\u0446\u0435\u043D\u044B)-1_58": 4569623133487969022
+      "\u2014 \u043F\u043E\u0438\u043D\u0442\u044B, \u043A\u043E\u0442\u043E\u0440\u044B\u0435 \u043F\u0435\u0440\u0435\u043D\u043E\u0441\u044F\u0442 \u043F\u0435\u0440\u0441\u043E\u043D\u0430\u0436\u0430 \u043D\u0430 \u0441\u043B\u0435\u0434. \u0443\u0440\u043E\u0432\u0435\u043D\u044C (\u0443\u0434\u0430\u043B\u044F\u044E\u0442 \u0441\u043E \u0441\u0446\u0435\u043D\u044B)-1_59": 8936466642339384138
+      "\u2014 \u043F\u043E\u0438\u043D\u0442\u044B, \u043A\u043E\u0442\u043E\u0440\u044B\u0435 \u043F\u0435\u0440\u0435\u043D\u043E\u0441\u044F\u0442 \u043F\u0435\u0440\u0441\u043E\u043D\u0430\u0436\u0430 \u043D\u0430 \u0441\u043B\u0435\u0434. \u0443\u0440\u043E\u0432\u0435\u043D\u044C (\u0443\u0434\u0430\u043B\u044F\u044E\u0442 \u0441\u043E \u0441\u0446\u0435\u043D\u044B)-1_6": -6216524471560808641
+      "\u2014 \u043F\u043E\u0438\u043D\u0442\u044B, \u043A\u043E\u0442\u043E\u0440\u044B\u0435 \u043F\u0435\u0440\u0435\u043D\u043E\u0441\u044F\u0442 \u043F\u0435\u0440\u0441\u043E\u043D\u0430\u0436\u0430 \u043D\u0430 \u0441\u043B\u0435\u0434. \u0443\u0440\u043E\u0432\u0435\u043D\u044C (\u0443\u0434\u0430\u043B\u044F\u044E\u0442 \u0441\u043E \u0441\u0446\u0435\u043D\u044B)-1_60": -1906648094697902920
+      "\u2014 \u043F\u043E\u0438\u043D\u0442\u044B, \u043A\u043E\u0442\u043E\u0440\u044B\u0435 \u043F\u0435\u0440\u0435\u043D\u043E\u0441\u044F\u0442 \u043F\u0435\u0440\u0441\u043E\u043D\u0430\u0436\u0430 \u043D\u0430 \u0441\u043B\u0435\u0434. \u0443\u0440\u043E\u0432\u0435\u043D\u044C (\u0443\u0434\u0430\u043B\u044F\u044E\u0442 \u0441\u043E \u0441\u0446\u0435\u043D\u044B)-1_61": 4582617788237400556
+      "\u2014 \u043F\u043E\u0438\u043D\u0442\u044B, \u043A\u043E\u0442\u043E\u0440\u044B\u0435 \u043F\u0435\u0440\u0435\u043D\u043E\u0441\u044F\u0442 \u043F\u0435\u0440\u0441\u043E\u043D\u0430\u0436\u0430 \u043D\u0430 \u0441\u043B\u0435\u0434. \u0443\u0440\u043E\u0432\u0435\u043D\u044C (\u0443\u0434\u0430\u043B\u044F\u044E\u0442 \u0441\u043E \u0441\u0446\u0435\u043D\u044B)-1_62": 5276851951848683777
+      "\u2014 \u043F\u043E\u0438\u043D\u0442\u044B, \u043A\u043E\u0442\u043E\u0440\u044B\u0435 \u043F\u0435\u0440\u0435\u043D\u043E\u0441\u044F\u0442 \u043F\u0435\u0440\u0441\u043E\u043D\u0430\u0436\u0430 \u043D\u0430 \u0441\u043B\u0435\u0434. \u0443\u0440\u043E\u0432\u0435\u043D\u044C (\u0443\u0434\u0430\u043B\u044F\u044E\u0442 \u0441\u043E \u0441\u0446\u0435\u043D\u044B)-1_63": -1893429792556919295
+      "\u2014 \u043F\u043E\u0438\u043D\u0442\u044B, \u043A\u043E\u0442\u043E\u0440\u044B\u0435 \u043F\u0435\u0440\u0435\u043D\u043E\u0441\u044F\u0442 \u043F\u0435\u0440\u0441\u043E\u043D\u0430\u0436\u0430 \u043D\u0430 \u0441\u043B\u0435\u0434. \u0443\u0440\u043E\u0432\u0435\u043D\u044C (\u0443\u0434\u0430\u043B\u044F\u044E\u0442 \u0441\u043E \u0441\u0446\u0435\u043D\u044B)-1_64": 3409162287986368531
+      "\u2014 \u043F\u043E\u0438\u043D\u0442\u044B, \u043A\u043E\u0442\u043E\u0440\u044B\u0435 \u043F\u0435\u0440\u0435\u043D\u043E\u0441\u044F\u0442 \u043F\u0435\u0440\u0441\u043E\u043D\u0430\u0436\u0430 \u043D\u0430 \u0441\u043B\u0435\u0434. \u0443\u0440\u043E\u0432\u0435\u043D\u044C (\u0443\u0434\u0430\u043B\u044F\u044E\u0442 \u0441\u043E \u0441\u0446\u0435\u043D\u044B)-1_65": -2404216719388388167
+      "\u2014 \u043F\u043E\u0438\u043D\u0442\u044B, \u043A\u043E\u0442\u043E\u0440\u044B\u0435 \u043F\u0435\u0440\u0435\u043D\u043E\u0441\u044F\u0442 \u043F\u0435\u0440\u0441\u043E\u043D\u0430\u0436\u0430 \u043D\u0430 \u0441\u043B\u0435\u0434. \u0443\u0440\u043E\u0432\u0435\u043D\u044C (\u0443\u0434\u0430\u043B\u044F\u044E\u0442 \u0441\u043E \u0441\u0446\u0435\u043D\u044B)-1_7": 6169948058204772519
+      "\u2014 \u043F\u043E\u0438\u043D\u0442\u044B, \u043A\u043E\u0442\u043E\u0440\u044B\u0435 \u043F\u0435\u0440\u0435\u043D\u043E\u0441\u044F\u0442 \u043F\u0435\u0440\u0441\u043E\u043D\u0430\u0436\u0430 \u043D\u0430 \u0441\u043B\u0435\u0434. \u0443\u0440\u043E\u0432\u0435\u043D\u044C (\u0443\u0434\u0430\u043B\u044F\u044E\u0442 \u0441\u043E \u0441\u0446\u0435\u043D\u044B)-1_8": 729581370369862840
+      "\u2014 \u043F\u043E\u0438\u043D\u0442\u044B, \u043A\u043E\u0442\u043E\u0440\u044B\u0435 \u043F\u0435\u0440\u0435\u043D\u043E\u0441\u044F\u0442 \u043F\u0435\u0440\u0441\u043E\u043D\u0430\u0436\u0430 \u043D\u0430 \u0441\u043B\u0435\u0434. \u0443\u0440\u043E\u0432\u0435\u043D\u044C (\u0443\u0434\u0430\u043B\u044F\u044E\u0442 \u0441\u043E \u0441\u0446\u0435\u043D\u044B)-1_9": -2455574619353907289
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
