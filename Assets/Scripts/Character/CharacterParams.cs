@@ -1,8 +1,10 @@
 using UnityEngine;
+using UnityEngine.TextCore.Text;
+
 
 public class CharacterParams : MonoBehaviour
 {
-    public Vector2 startPosition;
+    public Vector2Int startPosition;
     public float movementSpeed;
     public float jumpForce;
     public SpriteRenderer spriteRenderer;
@@ -20,39 +22,86 @@ public class CharacterParams : MonoBehaviour
     void Start()
     {
         collider2D.size = new Vector2(1, 1);
-        startPosition = transform.position;
     }
 
+    private void OnValidate()
+    {
+        var personsController = FindObjectOfType<PersonsController>();
+        personsController.SetCharacterPosition(gameObject, startPosition.x, startPosition.y);
+        ApplySettings();
+    }
+
+    /// <summary>
+    /// Обновление настроек после каждого изменения параметров
+    /// </summary>
+    private void ApplySettings()
+    {
+        SetMovementSpeed(movementSpeed);
+        SetJumpForce(jumpForce);
+        SetMovementDirection(movementDirection);
+        SetColliderSize(colliderSize);
+    }
+
+    /// <summary>
+    /// Установка старотовой позиции
+    /// </summary>
+    public void SetStartPosition(Vector2Int position)
+    {
+        startPosition = position;
+    }
+
+    /// <summary>
+    /// Установка скорости передвижения
+    /// </summary>
     public void SetMovementSpeed(float speed)
     {
         movementSpeed = speed;
     }
 
+    /// <summary>
+    /// Установка силы прыжка
+    /// </summary>
     public void SetJumpForce(float force)
     {
         jumpForce = force;
     }
 
+    /// <summary>
+    /// Установка размера коллайдера
+    /// </summary>
     public void SetColliderSize(Vector2 size)
     {
-        transform.localScale = size;
+        colliderSize = size;
+        transform.localScale = colliderSize;
     }
 
+    /// <summary>
+    /// Установка спрайта
+    /// </summary>
     public void SetSprite(SpriteRenderer newSprite)
     {
         spriteRenderer.sprite = newSprite.sprite;
     }
 
+    /// <summary>
+    /// Установка цвета
+    /// </summary>
     public void SetColor(SpriteRenderer newSprite)
     {
         spriteRenderer.color = newSprite.color;
     }
 
+    /// <summary>
+    /// Установка направления передвижения
+    /// </summary>
     public void SetMovementDirection(int direction)
     {
         movementDirection = direction;
     }
 
+    /// <summary>
+    /// Смена направления передвижения 
+    /// </summary>
     public void ChangeMovementDirection()
     {
         movementDirection *= -1;
