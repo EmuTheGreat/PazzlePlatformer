@@ -2,133 +2,98 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
+[ExecuteInEditMode]
 public class PersonsController : MonoBehaviour
 {
+    [Header("Character Settings")]
     [SerializeField]
-    private GameObject personsList;
+    public GameObject personsList;
     [SerializeField]
-    private GameObject collideObjectsList;
-    [SerializeField]
-    private GameObject playerPrefab;
-    [SerializeField]
-    private GameObject playerPrefabForChangeSkin;
+    public List<GameObject> playerPrefabs = new List<GameObject>();
 
-    public List<GameObject> objects;
+    [Header("Character Parameters")]
     public Vector2 objectPosition = new Vector2(0, 0);
     public Vector2 colliderSize = new Vector2(1, 1);
-
     public float movementSpeed = 5f;
     public float jumpForce = 10f;
-
-    public KeyCode moveLeftKey = KeyCode.A;
-    public KeyCode moveRightKey = KeyCode.D;
-    public KeyCode jumpKey = KeyCode.Space;
-    public KeyCode specialActionKey = KeyCode.F;
-
     public bool movementDirectionReverse = false;
 
+    private List<GameObject> objects = new List<GameObject>();
+    public int selectedPrefabIndex = 0;
 
-    public List<GameObject> collisionObjects; // Объекты для возможных столкновений
-    public bool removeOnCollision = false;
-
-    void Start()
+    private void OnValidate()
     {
-
+        if (personsList == null)
+        {
+            personsList = new GameObject("PersonsList");
+        }
     }
 
     public void CreateCharacter()
     {
-        if (playerPrefab != null)
+        if (playerPrefabs.Count > 0 && personsList != null)
         {
-            GameObject newCharacter = Instantiate(playerPrefab, objectPosition, Quaternion.identity, personsList.transform);
+            GameObject selectedPrefab = playerPrefabs[selectedPrefabIndex];
+            GameObject newCharacter = Instantiate(selectedPrefab, objectPosition, Quaternion.identity, personsList.transform);
+
             CharacterParams characterParams = newCharacter.GetComponent<CharacterParams>();
 
             SetCharacterPosition(newCharacter, (int)objectPosition.x, (int)objectPosition.y);
 
+            characterParams.SetStartPosition(new Vector2Int((int)objectPosition.x, (int)objectPosition.y));
             characterParams.SetMovementSpeed(movementSpeed);
             characterParams.SetJumpForce(jumpForce);
             characterParams.SetColliderSize(colliderSize);
-            characterParams.SetMovementDirection(movementDirectionReverse ? -1: 1);
+            characterParams.SetMovementDirection(movementDirectionReverse ? -1 : 1);
 
             objects.Add(newCharacter);
         }
     }
 
+    public void RemoveCharacter(GameObject character)
+    {
+        if (objects.Contains(character))
+        {
+            objects.Remove(character);
+            DestroyImmediate(character);
+        }
+    }
+
     public void ChangeAllCharacterSkin()
     {
-        if (playerPrefabForChangeSkin != null)
+        if (playerPrefabs.Count > 0)
         {
-            var persons = GetPersons();
-
-            foreach (var person in persons)
+            GameObject selectedSkinPrefab = playerPrefabs[selectedPrefabIndex];
+            foreach (var person in objects)
             {
-                person.GetComponent<CharacterParams>()
-                    .SetSprite(playerPrefabForChangeSkin.transform.GetChild(0).GetComponent<SpriteRenderer>());
-
-                //Temp
-                person.GetComponent<CharacterParams>()
-                    .SetColor(playerPrefabForChangeSkin.transform.GetChild(0).GetComponent<SpriteRenderer>());
+                CharacterParams characterParams = person.GetComponent<CharacterParams>();
+                characterParams.SetSprite(selectedSkinPrefab.transform.GetChild(0).GetComponent<SpriteRenderer>());
             }
         }
     }
 
-    [HideInInspector]
-    public int index;
-
-    public void ChangeCharacterSkin()
-    {
-        if (playerPrefabForChangeSkin != null)
-        {
-            var persons = GetPersons();
-            try
-            {
-                var person = persons[index];
-
-                person.GetComponent<CharacterParams>()
-                    .SetSprite(playerPrefabForChangeSkin.transform.GetChild(0).GetComponent<SpriteRenderer>());
-
-                //Temp
-                person.GetComponent<CharacterParams>()
-                    .SetColor(playerPrefabForChangeSkin.transform.GetChild(0).GetComponent<SpriteRenderer>());
-            }
-            catch (ArgumentOutOfRangeException e) { }
-        }
-    }
-
-    public void ChangeCharacterSkin(GameObject character, SpriteRenderer newSkin)
-    {
-        CharacterParams characterParams = character.GetComponent<CharacterParams>();
-        characterParams.SetSprite(newSkin);
-    }
-
-    // Direction change
-    public void ChangeMovementDirection(GameObject character, int direction = 1)
-    {
-        CharacterParams characterParams = character.GetComponent<CharacterParams>();
-        characterParams.SetMovementDirection(direction);
-    }
-
-    // Set position by LevelEditor
     public void SetCharacterPosition(GameObject character, int x, int y)
     {
         LevelEditor levelEditor = FindObjectOfType<LevelEditor>();
         Vector2 position = levelEditor.GetPositionFromGrid(x, y);
-
-        CharacterParams characterParams = character.GetComponent<CharacterParams>();
-        characterParams.transform.position = position;
-
+        character.transform.position = position;
     }
 
-    public List<GameObject> GetPersons()
+    public void ClearCharacters()
     {
-        var result = new List<GameObject>();
-        for (int i = 0; i < personsList.transform.childCount; i++)
+        foreach (var character in objects)
         {
-            result.Add(personsList.transform.GetChild(i).gameObject);
+            DestroyImmediate(character);
         }
+        objects.Clear();
+    }
 
-        return result;
+    public void SelectPrefab(int index)
+    {
+        if (index >= 0 && index < playerPrefabs.Count)
+        {
+            selectedPrefabIndex = index;
+        }
     }
 }
 
- 
