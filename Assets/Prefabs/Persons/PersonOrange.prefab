@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8381605368612494049}
   - component: {fileID: 4959478543595787571}
   - component: {fileID: 7957819461923586895}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: PersonOrange
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -28,8 +28,8 @@ Transform:
   m_GameObject: {fileID: 2279941662399189546}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -9.5, y: -2, z: 0}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6123363010362063530}
@@ -50,7 +50,7 @@ MonoBehaviour:
   startPosition: {x: 0, y: 0}
   movementSpeed: 0
   jumpForce: 0
-  spriteRenderer: {fileID: 0}
+  sprite: {fileID: 0}
   colliderSize: {x: 0, y: 0}
   movementDirection: 0
 --- !u!50 &4959478543595787571
@@ -135,7 +135,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6123363010362063530}
   - component: {fileID: 3513429565330866187}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}

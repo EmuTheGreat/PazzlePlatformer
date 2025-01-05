@@ -1,16 +1,17 @@
 using UnityEngine;
 using UnityEngine.TextCore.Text;
 
-
+[ExecuteInEditMode]
 public class CharacterParams : MonoBehaviour
 {
     public Vector2Int startPosition;
     public float movementSpeed;
     public float jumpForce;
-    public SpriteRenderer spriteRenderer;
+    public Sprite sprite;
     public Vector2 colliderSize;
     public int movementDirection;
 
+    private SpriteRenderer spriteRenderer;
     private BoxCollider2D collider2D;
 
     void Awake()
@@ -27,7 +28,12 @@ public class CharacterParams : MonoBehaviour
     private void OnValidate()
     {
         var personsController = FindObjectOfType<PersonsController>();
-        personsController.SetCharacterPosition(gameObject, startPosition.x, startPosition.y);
+
+        if (personsController != null)
+        {
+            personsController.SetCharacterPosition(gameObject, startPosition.x, startPosition.y);
+        }
+
         ApplySettings();
     }
 
@@ -38,6 +44,12 @@ public class CharacterParams : MonoBehaviour
     {
         SetMovementSpeed(movementSpeed);
         SetJumpForce(jumpForce);
+
+        if (sprite != null)
+        {
+            SetSprite(sprite);
+        }
+
         SetMovementDirection(movementDirection);
         SetColliderSize(colliderSize);
     }
@@ -78,9 +90,13 @@ public class CharacterParams : MonoBehaviour
     /// <summary>
     /// Установка спрайта
     /// </summary>
-    public void SetSprite(SpriteRenderer newSprite)
+    public void SetSprite(Sprite newSprite)
     {
-        spriteRenderer.sprite = newSprite.sprite;
+        if (spriteRenderer != null)
+        {
+            sprite = newSprite;
+            spriteRenderer.sprite = sprite;
+        }
     }
 
     /// <summary>
