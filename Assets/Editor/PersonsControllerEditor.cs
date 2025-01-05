@@ -16,6 +16,7 @@ public class PersonsControllerEditor : Editor
         serializedObject.Update();
         EditorGUILayout.PropertyField(serializedObject.FindProperty("personsList"));
         EditorGUILayout.PropertyField(serializedObject.FindProperty("playerPrefabs"), true);
+        EditorGUILayout.PropertyField(serializedObject.FindProperty("persons"));
 
         if (controller.playerPrefabs.Count > 0)
         {

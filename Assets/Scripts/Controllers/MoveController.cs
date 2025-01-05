@@ -1,8 +1,5 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.TextCore.Text;
-using static Unity.VisualScripting.Metadata;
 
 public class MoveController : MonoBehaviour
 {
@@ -13,8 +10,13 @@ public class MoveController : MonoBehaviour
     private List<Collider2D> colliders = new();
 
     private float moveInput;
-
     private int count;
+
+    // Переменные для проверки нахождения на земле
+    private List<bool> isGrounded = new();
+
+    [SerializeField] private LayerMask groundLayer;
+    [SerializeField] private float groundCheckRadius = 0.2f;
 
     void Start()
     {
@@ -22,8 +24,9 @@ public class MoveController : MonoBehaviour
         rigidbodies = GetObjects<Rigidbody2D>(PersonsParent);
         colliders = GetObjects<Collider2D>(PersonsParent);
         count = persons.Count;
+        isGrounded = new List<bool>(new bool[count]);
 
-        IgnoreCollision();
+        EnableCollision();
     }
 
     void Update()
@@ -34,22 +37,33 @@ public class MoveController : MonoBehaviour
             rigidbodies = GetObjects<Rigidbody2D>(PersonsParent);
             colliders = GetObjects<Collider2D>(PersonsParent);
             count = persons.Count;
+            isGrounded = new List<bool>(new bool[count]);
 
-            IgnoreCollision();
+            EnableCollision();
             Debug.Log(count);
         }
+
         moveInput = Input.GetAxis("Horizontal");
 
         for (int i = 0; i < persons.Count; i++)
         {
-            rigidbodies[i].velocity = new Vector2(moveInput * persons[i].movementSpeed * persons[i].movementDirection, rigidbodies[i].velocity.y);
+            Vector2 velocity = rigidbodies[i].velocity;
+            velocity.x = moveInput * persons[i].movementSpeed * persons[i].movementDirection;
+            rigidbodies[i].velocity = velocity;
+
+            // Проверка, стоит ли персонаж на земле
+            isGrounded[i] = Physics2D.OverlapCircle(colliders[i].bounds.min, groundCheckRadius, groundLayer);
         }
 
+        // Обновление прыжка с учетом нахождения на земле
         if (Input.GetButtonDown("Jump"))
         {
             for (int i = 0; i < persons.Count; i++)
             {
-                rigidbodies[i].velocity = new Vector2(rigidbodies[i].velocity.x, persons[i].jumpForce);
+                if (isGrounded[i])
+                {
+                    rigidbodies[i].velocity = new Vector2(rigidbodies[i].velocity.x, persons[i].jumpForce);
+                }
             }
         }
     }
@@ -60,7 +74,10 @@ public class MoveController : MonoBehaviour
         for (int i = 0; i < parent.transform.childCount; i++)
         {
             var childTransform = parent.transform.GetChild(i).GetComponent<T>();
-            children.Add(childTransform);
+            if (childTransform != null)
+            {
+                children.Add(childTransform);
+            }
         }
         return children;
     }
@@ -70,7 +87,6 @@ public class MoveController : MonoBehaviour
         for (int i = 0; i < count; i++)
         {
             Collider2D collider1 = colliders[i];
-
             for (int j = i + 1; j < count; j++)
             {
                 Collider2D collider2 = colliders[j];

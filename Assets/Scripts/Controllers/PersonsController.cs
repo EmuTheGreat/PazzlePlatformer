@@ -18,16 +18,8 @@ public class PersonsController : MonoBehaviour
     public float jumpForce = 10f;
     public bool movementDirectionReverse = false;
 
-    private List<GameObject> objects = new List<GameObject>();
+    public List<GameObject> persons = new List<GameObject>();
     public int selectedPrefabIndex = 0;
-
-    private void OnValidate()
-    {
-        if (personsList == null)
-        {
-            personsList = new GameObject("PersonsList");
-        }
-    }
 
     public void CreateCharacter()
     {
@@ -40,22 +32,23 @@ public class PersonsController : MonoBehaviour
 
             SetCharacterPosition(newCharacter, (int)objectPosition.x, (int)objectPosition.y);
 
+            characterParams.SetSprite(selectedPrefab.GetComponentInChildren<SpriteRenderer>().sprite);
             characterParams.SetStartPosition(new Vector2Int((int)objectPosition.x, (int)objectPosition.y));
             characterParams.SetMovementSpeed(movementSpeed);
             characterParams.SetJumpForce(jumpForce);
             characterParams.SetColliderSize(colliderSize);
             characterParams.SetMovementDirection(movementDirectionReverse ? -1 : 1);
 
-            objects.Add(newCharacter);
+            persons.Add(newCharacter);
         }
     }
 
     public void RemoveCharacter(GameObject character)
     {
-        if (objects.Contains(character))
+        if (persons.Contains(character))
         {
-            objects.Remove(character);
-            DestroyImmediate(character);
+            persons.Remove(character);
+            Destroy(character);
         }
     }
 
@@ -64,10 +57,10 @@ public class PersonsController : MonoBehaviour
         if (playerPrefabs.Count > 0)
         {
             GameObject selectedSkinPrefab = playerPrefabs[selectedPrefabIndex];
-            foreach (var person in objects)
+            foreach (var person in persons)
             {
                 CharacterParams characterParams = person.GetComponent<CharacterParams>();
-                characterParams.SetSprite(selectedSkinPrefab.transform.GetChild(0).GetComponent<SpriteRenderer>());
+                characterParams.SetSprite(selectedSkinPrefab.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite);
             }
         }
     }
@@ -81,11 +74,11 @@ public class PersonsController : MonoBehaviour
 
     public void ClearCharacters()
     {
-        foreach (var character in objects)
+        foreach (var character in persons)
         {
             DestroyImmediate(character);
         }
-        objects.Clear();
+        persons.Clear();
     }
 
     public void SelectPrefab(int index)
