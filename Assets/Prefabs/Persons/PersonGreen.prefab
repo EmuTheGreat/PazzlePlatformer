@@ -29,7 +29,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -9.5, y: -2, z: 0}
-  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6123363010362063530}
@@ -51,7 +51,7 @@ MonoBehaviour:
   movementSpeed: 0
   jumpForce: 0
   sprite: {fileID: 0}
-  colliderSize: {x: 0, y: 0}
+  colliderSize: {x: 1, y: 1}
   movementDirection: 0
 --- !u!50 &4959478543595787571
 Rigidbody2D:

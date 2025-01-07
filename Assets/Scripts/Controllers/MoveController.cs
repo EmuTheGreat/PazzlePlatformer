@@ -51,8 +51,18 @@ public class MoveController : MonoBehaviour
             velocity.x = moveInput * persons[i].movementSpeed * persons[i].movementDirection;
             rigidbodies[i].velocity = velocity;
 
+            // Изменение направления текстуры
+            if (moveInput > 0)
+            {
+                persons[i].transform.localScale = new Vector3(Mathf.Abs(persons[i].transform.localScale.x), persons[i].transform.localScale.y, persons[i].transform.localScale.z);
+            }
+            else if (moveInput < 0)
+            {
+                persons[i].transform.localScale = new Vector3(-Mathf.Abs(persons[i].transform.localScale.x), persons[i].transform.localScale.y, persons[i].transform.localScale.z);
+            }
+
             // Проверка, стоит ли персонаж на земле
-            isGrounded[i] = Physics2D.OverlapCircle(colliders[i].bounds.min, groundCheckRadius, groundLayer);
+            isGrounded[i] = Physics2D.OverlapCircle(new Vector2(colliders[i].bounds.center.x, colliders[i].bounds.min.y), groundCheckRadius, groundLayer);
         }
 
         // Обновление прыжка с учетом нахождения на земле
@@ -98,4 +108,19 @@ public class MoveController : MonoBehaviour
     public void IgnoreCollision() => TurnOffCollision(true);
 
     public void EnableCollision() => TurnOffCollision(false);
+
+
+    private void OnDrawGizmos()
+    {
+        if (colliders == null || colliders.Count == 0) return;
+
+        Gizmos.color = Color.green;
+
+        for (int i = 0; i < colliders.Count; i++)
+        {
+            // Отображение groundCheck
+            Vector2 groundCheckPosition = new Vector2(colliders[i].bounds.center.x, colliders[i].bounds.min.y);
+            Gizmos.DrawWireSphere(groundCheckPosition, groundCheckRadius);
+        }
+    }
 }

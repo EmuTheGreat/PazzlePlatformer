@@ -22,7 +22,6 @@ public class CharacterParams : MonoBehaviour
 
     void Start()
     {
-        collider2D.size = new Vector2(1, 1);
     }
 
     private void OnValidate()

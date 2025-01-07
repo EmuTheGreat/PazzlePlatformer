@@ -20,21 +20,27 @@ public class InteractableObject : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        foreach (var interaction in interactable)
+        if (interactable.Count > 0)
         {
-            if (collision.CompareTag("Player") && interactable != null)
+            foreach (var interaction in interactable)
             {
-                interaction.Interact(collision.gameObject);
+                if (collision.CompareTag("Player") && interactable != null)
+                {
+                    interaction.Interact(collision.gameObject);
+                }
             }
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        foreach (var interaction in interactable)
+        if (interactable.Count > 0)
         {
-            if (collision.CompareTag("Player") && interactable != null)
+            foreach (var interaction in interactable)
             {
-                interaction.Interact(collision.gameObject);
+                if (collision.CompareTag("Player") && interactable != null)
+                {
+                    interaction.Interact(collision.gameObject);
+                }
             }
         }
     }
