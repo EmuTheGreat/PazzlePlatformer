@@ -12,11 +12,12 @@ public class MoveController : MonoBehaviour
     private float moveInput;
     private int count;
 
-    // Переменные для проверки нахождения на земле
     private List<bool> isGrounded = new();
 
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private float groundCheckRadius = 0.2f;
+
+    private Camera mainCamera;
 
     void Start()
     {
@@ -26,6 +27,7 @@ public class MoveController : MonoBehaviour
         count = persons.Count;
         isGrounded = new List<bool>(new bool[count]);
 
+        mainCamera = Camera.main;
         EnableCollision();
     }
 
@@ -51,7 +53,6 @@ public class MoveController : MonoBehaviour
             velocity.x = moveInput * persons[i].movementSpeed * persons[i].movementDirection;
             rigidbodies[i].velocity = velocity;
 
-            // Изменение направления текстуры
             if (moveInput > 0)
             {
                 persons[i].transform.localScale = new Vector3(Mathf.Abs(persons[i].transform.localScale.x), persons[i].transform.localScale.y, persons[i].transform.localScale.z);
@@ -61,11 +62,11 @@ public class MoveController : MonoBehaviour
                 persons[i].transform.localScale = new Vector3(-Mathf.Abs(persons[i].transform.localScale.x), persons[i].transform.localScale.y, persons[i].transform.localScale.z);
             }
 
-            // Проверка, стоит ли персонаж на земле
             isGrounded[i] = Physics2D.OverlapCircle(new Vector2(colliders[i].bounds.center.x, colliders[i].bounds.min.y), groundCheckRadius, groundLayer);
+
+            RestrictMovementToCameraBounds(rigidbodies[i]);
         }
 
-        // Обновление прыжка с учетом нахождения на земле
         if (Input.GetButtonDown("Jump"))
         {
             for (int i = 0; i < persons.Count; i++)
@@ -76,6 +77,18 @@ public class MoveController : MonoBehaviour
                 }
             }
         }
+    }
+
+    private void RestrictMovementToCameraBounds(Rigidbody2D rb)
+    {
+        Vector3 viewPos = rb.transform.position;
+        Vector3 minBounds = mainCamera.ViewportToWorldPoint(new Vector3(0, 0, 0));
+        Vector3 maxBounds = mainCamera.ViewportToWorldPoint(new Vector3(1, 1, 0));
+
+        viewPos.x = Mathf.Clamp(viewPos.x, minBounds.x + colliders[0].bounds.extents.x, maxBounds.x - colliders[0].bounds.extents.x);
+        viewPos.y = Mathf.Clamp(viewPos.y, minBounds.y + colliders[0].bounds.extents.y, maxBounds.y - colliders[0].bounds.extents.y);
+
+        rb.transform.position = viewPos;
     }
 
     List<T> GetObjects<T>(GameObject parent)
@@ -109,7 +122,6 @@ public class MoveController : MonoBehaviour
 
     public void EnableCollision() => TurnOffCollision(false);
 
-
     private void OnDrawGizmos()
     {
         if (colliders == null || colliders.Count == 0) return;
@@ -118,7 +130,6 @@ public class MoveController : MonoBehaviour
 
         for (int i = 0; i < colliders.Count; i++)
         {
-            // Отображение groundCheck
             Vector2 groundCheckPosition = new Vector2(colliders[i].bounds.center.x, colliders[i].bounds.min.y);
             Gizmos.DrawWireSphere(groundCheckPosition, groundCheckRadius);
         }

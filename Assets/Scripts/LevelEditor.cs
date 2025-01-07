@@ -15,6 +15,8 @@ public class LevelEditor : MonoBehaviour
     [Header("Placement Options")]
     public GameObject[] levelLayout; // Одномерный массив для размещения объектов
 
+    public GameObject[] tiles;
+
     void OnValidate()
     {
         if (levelLayout == null || levelLayout.Length != gridWidth * gridHeight)
@@ -40,6 +42,7 @@ public class LevelEditor : MonoBehaviour
                 }
             }
         }
+        FillEmptySpaceUnderLevel();
     }
 
     public void ClearLevel()
@@ -110,6 +113,23 @@ public class LevelEditor : MonoBehaviour
                 Vector3 position = GetPositionFromGrid(x, y);
                 Vector3 size = new Vector3(tileSize.x, tileSize.y, 0);
                 Gizmos.DrawWireCube(position, size);
+            }
+        }
+    }
+
+    private void FillEmptySpaceUnderLevel()
+    {
+        for (int x = 0; x < gridWidth; x++)
+        {
+            for (int y = -1; y > -6; y--)
+            {
+                Vector3 position = GetPositionFromGrid(x, y);
+                GameObject prefab = tiles[0];
+
+                if (prefab != null)
+                {
+                    InstantiateTile(prefab, position);
+                }
             }
         }
     }
