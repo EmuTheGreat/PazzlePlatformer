@@ -28,7 +28,7 @@ public class MoveController : MonoBehaviour
         isGrounded = new List<bool>(new bool[count]);
 
         mainCamera = Camera.main;
-        EnableCollision();
+        IgnoreCollision();
     }
 
     void Update()
@@ -41,7 +41,7 @@ public class MoveController : MonoBehaviour
             count = persons.Count;
             isGrounded = new List<bool>(new bool[count]);
 
-            EnableCollision();
+            IgnoreCollision();
             Debug.Log(count);
         }
 

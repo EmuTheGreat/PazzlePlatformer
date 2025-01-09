@@ -14,10 +14,39 @@ public class PersonsControllerEditor : Editor
     public override void OnInspectorGUI()
     {
         serializedObject.Update();
+
+        EditorGUILayout.LabelField("Character Management", EditorStyles.boldLabel);
         EditorGUILayout.PropertyField(serializedObject.FindProperty("personsList"));
         EditorGUILayout.PropertyField(serializedObject.FindProperty("playerPrefabs"), true);
-        EditorGUILayout.PropertyField(serializedObject.FindProperty("persons"));
+        EditorGUILayout.PropertyField(serializedObject.FindProperty("persons"), true);
 
+        EditorGUILayout.Space();
+
+        // Выпадающий список для выбора персонажа на сцене
+        if (controller.persons.Count > 0)
+        {
+            string[] characterNames = new string[controller.persons.Count];
+            for (int i = 0; i < controller.persons.Count; i++)
+            {
+                characterNames[i] = controller.persons[i] != null ? $"{i} {controller.persons[i].name}" : "None";
+            }
+
+            int selectedCharacterIndex = EditorGUILayout.Popup("Selected Character",
+                controller.persons.IndexOf(controller.selectedCharacter),
+                characterNames);
+
+            controller.selectedCharacter = selectedCharacterIndex >= 0
+                ? controller.persons[selectedCharacterIndex]
+                : null;
+        }
+        else
+        {
+            EditorGUILayout.HelpBox("No characters available in the scene.", MessageType.Warning);
+        }
+
+        EditorGUILayout.Space();
+
+        // Выпадающий список для выбора скина
         if (controller.playerPrefabs.Count > 0)
         {
             string[] prefabNames = new string[controller.playerPrefabs.Count];
@@ -39,17 +68,29 @@ public class PersonsControllerEditor : Editor
 
         EditorGUILayout.Space();
 
-        if (GUILayout.Button("Create Character"))
+        // Управление персонажами
+        EditorGUILayout.LabelField("Действия", EditorStyles.boldLabel);
+        if (GUILayout.Button("Создать персонажа"))
         {
             controller.CreateCharacter();
         }
 
-        if (GUILayout.Button("Change All Character Skins"))
+        if (GUILayout.Button("Поменять скин выбранному персонажу"))
+        {
+            controller.ChangeSelectedCharacterSkin();
+        }
+
+        if (GUILayout.Button("Поменять скин всем персонажам"))
         {
             controller.ChangeAllCharacterSkin();
         }
 
-        if (GUILayout.Button("Clear Characters"))
+        if (GUILayout.Button("Удалить выбранного персонажа"))
+        {
+            controller.RemoveCharacter(controller.selectedCharacter);
+        }
+
+        if (GUILayout.Button("Удалить всех персонажей со сцены"))
         {
             controller.ClearCharacters();
         }
