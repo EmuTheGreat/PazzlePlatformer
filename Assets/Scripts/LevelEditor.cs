@@ -97,7 +97,6 @@ public class LevelEditor : MonoBehaviour
                 tileObject.transform.position.x,
                 tileObject.transform.position.y - offsetY,
                 tileObject.transform.position.z);
-
         }
 
         return tileObject;
