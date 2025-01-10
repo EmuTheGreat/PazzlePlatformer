@@ -2546,7 +2546,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 11.25
+  orthographic size: 8.4375
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -47339,7 +47339,7 @@ MonoBehaviour:
   jumpForce: 10
   sprite: {fileID: 21300000, guid: 39e8d723bf5edd94289b06c3fd5f0fb3, type: 3}
   colliderSize: {x: 1, y: 1}
-  movementDirection: 1
+  movementDirection: -1
 --- !u!1001 &8781529404826895220
 PrefabInstance:
   m_ObjectHideFlags: 0
