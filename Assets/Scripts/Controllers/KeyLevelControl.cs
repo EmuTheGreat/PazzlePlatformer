@@ -1,6 +1,7 @@
 using UnityEngine.SceneManagement;
 using UnityEngine;
 
+[ExecuteInEditMode]
 public class KeyLevelControl : MonoBehaviour
 {
     public int totalKeys;

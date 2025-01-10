@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 2279941662399189546}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -14.5, y: -5, z: 0}
+  m_LocalPosition: {x: -9.5, y: -4.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -48,11 +48,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startPosition: {x: 0, y: 0}
-  movementSpeed: 0
-  jumpForce: 0
-  sprite: {fileID: 0}
+  movementSpeed: 5
+  jumpForce: 10
+  sprite: {fileID: 21300000, guid: 9c6f9ff51f38d2749955aec987b03339, type: 3}
   colliderSize: {x: 1, y: 1}
-  movementDirection: 0
+  movementDirection: 1
 --- !u!50 &4959478543595787571
 Rigidbody2D:
   serializedVersion: 4
@@ -68,7 +68,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 2
   m_Material: {fileID: 6200000, guid: ef0d1427ef4bbb249be93b24f2c548e4, type: 2}
   m_IncludeLayers:
     serializedVersion: 2

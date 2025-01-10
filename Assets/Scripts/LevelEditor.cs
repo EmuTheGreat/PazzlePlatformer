@@ -6,20 +6,18 @@ public class LevelEditor : MonoBehaviour
     [Header("Grid Settings")]
     public int gridWidth = 32;
     public int gridHeight = 21;
-    public Vector2 tileSize = new Vector2(1f, 1f); // Размер одного тайла
-    public Vector2 tileSpacing = new Vector2(1f, 1f); // Шаг между тайлами
+    public Vector2 tileSize = new Vector2(1f, 1f);
+    public Vector2 tileSpacing = new Vector2(1f, 1f);
 
     [Header("Tile Prefabs")]
-    public GameObject[] tilePrefabs; // Массив префабов, которые можно размещать на уровне
-
-    [Header("Placement Options")]
-    public GameObject[] levelLayout; // Одномерный массив для размещения объектов
-
+    public GameObject[] tilePrefabs;
     public GameObject[] tiles;
-
     public GameObject[] surfacesTiles;
 
-    void OnValidate()
+    [Header("Placement Options")]
+    public GameObject[] levelLayout;
+
+    private void OnValidate()
     {
         if (levelLayout == null || levelLayout.Length != gridWidth * gridHeight)
         {
@@ -31,6 +29,12 @@ public class LevelEditor : MonoBehaviour
     {
         ClearLevel();
 
+        int keyCount = 0;
+
+        // Находим объект KeyLevelControl
+        var keyLevelControl = FindObjectOfType<KeyLevelControl>();
+        Transform keyParent = keyLevelControl != null ? keyLevelControl.transform : null;
+
         for (int x = 0; x < gridWidth; x++)
         {
             for (int y = 0; y < gridHeight; y++)
@@ -40,23 +44,31 @@ public class LevelEditor : MonoBehaviour
 
                 if (prefab != null && prefab.name.StartsWith("Tile"))
                 {
-                    if (levelLayout[GetArrayIndex(x, y + 1)] == null)
-                    {
-                        prefab = surfacesTiles[Random.Range(0, surfacesTiles.Length)];
-                    }
-                    else
-                    {
-                        prefab = tiles[Random.Range(0, tiles.Length)];
-                    }
+                    prefab = levelLayout[GetArrayIndex(x, y + 1)] == null || levelLayout[GetArrayIndex(x, y + 1)].CompareTag("key_object")
+                        ? surfacesTiles[Random.Range(0, surfacesTiles.Length)]
+                        : tiles[Random.Range(0, tiles.Length)];
                 }
 
                 if (prefab != null)
                 {
-                    InstantiateTile(prefab, position);
+                    GameObject instantiated = InstantiateTile(prefab, position, keyParent);
+
+                    // Проверяем тег ключа
+                    if (instantiated != null && instantiated.CompareTag("key_object"))
+                    {
+                        keyCount++;
+                    }
                 }
             }
         }
+
         FillEmptySpaceUnderLevel();
+
+        // Устанавливаем количество ключей в KeyLevelControl
+        if (keyLevelControl != null)
+        {
+            keyLevelControl.totalKeys = keyCount;
+        }
     }
 
     public void ClearLevel()
@@ -83,51 +95,23 @@ public class LevelEditor : MonoBehaviour
         return y * gridWidth + x;
     }
 
-    private GameObject InstantiateTile(GameObject prefab, Vector3 position)
+    private GameObject InstantiateTile(GameObject prefab, Vector3 position, Transform keyParent)
     {
         if (prefab == null) return null;
 
-        GameObject tileObject = Instantiate(prefab, position, Quaternion.identity, transform);
+        GameObject tileObject = Instantiate(prefab, position, Quaternion.identity);
 
-        Renderer renderer = tileObject.GetComponentInChildren<Renderer>();
-        if (renderer != null)
+        // Если объект является ключом, устанавливаем его родителем KeyLevelControl
+        if (tileObject.CompareTag("key_object") && keyParent != null)
         {
-            Vector3 originalSize = renderer.bounds.size; // Фактические размеры объекта
-            Vector3 prefabOriginalScale = prefab.transform.localScale; // Исходный масштаб объекта
-
-            float scaleX = tileSize.x / originalSize.x;
-            float scaleY = tileSize.y / originalSize.y;
-            float scale = Mathf.Min(scaleX, scaleY);
-
-            tileObject.transform.localScale = new Vector3(
-                prefabOriginalScale.x * scale,
-                prefabOriginalScale.y * scale,
-                prefabOriginalScale.z * scale // Масштабируем Z для корректного восприятия
-            );
-
-            float offsetY = (tileSize.y - tileObject.transform.localScale.y) / 2;
-
-            tileObject.transform.position = new Vector3(
-                tileObject.transform.position.x,
-                tileObject.transform.position.y - offsetY,
-                tileObject.transform.position.z);
+            tileObject.transform.SetParent(keyParent);
+        }
+        else
+        {
+            tileObject.transform.SetParent(transform);
         }
 
         return tileObject;
-    }
-
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.gray;
-        for (int x = 0; x < gridWidth; x++)
-        {
-            for (int y = 0; y < gridHeight; y++)
-            {
-                Vector3 position = GetPositionFromGrid(x, y);
-                Vector3 size = new Vector3(tileSize.x, tileSize.y, 0);
-                Gizmos.DrawWireCube(position, size);
-            }
-        }
     }
 
     private void FillEmptySpaceUnderLevel()
@@ -137,10 +121,8 @@ public class LevelEditor : MonoBehaviour
             for (int y = -1; y > -6; y--)
             {
                 Vector3 position = GetPositionFromGrid(x, y);
-                GameObject prefab = prefab = tiles[Random.Range(0, tiles.Length)];
-
-                InstantiateTile(prefab, position);
-
+                GameObject prefab = tiles[Random.Range(0, tiles.Length)];
+                InstantiateTile(prefab, position, null);
             }
         }
     }
