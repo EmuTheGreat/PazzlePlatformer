@@ -3,6 +3,8 @@ using UnityEngine;
 [ExecuteInEditMode]
 public class LevelEditor : MonoBehaviour
 {
+    public GameObject ObjectsToCollide;
+
     [Header("Grid Settings")]
     public int gridWidth = 32;
     public int gridHeight = 21;
@@ -77,6 +79,12 @@ public class LevelEditor : MonoBehaviour
         {
             DestroyImmediate(transform.GetChild(i).gameObject);
         }
+
+        var keyLevelControl = FindObjectOfType<KeyLevelControl>();
+        for (int i = keyLevelControl.transform.childCount - 1; i >=0; i--)
+        {
+            DestroyImmediate(keyLevelControl.transform.GetChild(i).gameObject);
+        }
     }
 
     public Vector3 GetPositionFromGrid(int x, int y)
@@ -100,11 +108,16 @@ public class LevelEditor : MonoBehaviour
         if (prefab == null) return null;
 
         GameObject tileObject = Instantiate(prefab, position, Quaternion.identity);
+        tileObject.transform.localScale = tileSize;
 
         // Если объект является ключом, устанавливаем его родителем KeyLevelControl
         if (tileObject.CompareTag("key_object") && keyParent != null)
         {
             tileObject.transform.SetParent(keyParent);
+        }
+        else if (tileObject.CompareTag("enemy") && ObjectsToCollide.transform != null)
+        {
+            tileObject.transform.SetParent(ObjectsToCollide.transform);
         }
         else
         {

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7646018463324245373}
   - component: {fileID: 5094997850067047472}
-  - component: {fileID: -5201068706069306747}
+  - component: {fileID: 2901603120968652891}
   m_Layer: 0
   m_Name: Iron
   m_TagString: Untagged
@@ -79,7 +79,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.4701383, y: 1.48251}
   m_EdgeRadius: 0
---- !u!114 &-5201068706069306747
+--- !u!114 &2901603120968652891
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -88,12 +88,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 2715306793134704571}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2ffe534087770cf45bade68735c96d07, type: 3}
+  m_Script: {fileID: 11500000, guid: 11ad253032365ca47957cc9eff2ed49a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hasCollision: 1
-  isEnemy: 0
-  isKey: 0
+  platform: {fileID: 2715306793134704571}
+  makeVisible: 0
 --- !u!1 &5175602976952682576
 GameObject:
   m_ObjectHideFlags: 0

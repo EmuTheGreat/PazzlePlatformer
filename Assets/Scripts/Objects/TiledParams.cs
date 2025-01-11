@@ -20,11 +20,17 @@ public class TiledParams : MonoBehaviour
     {
         if (isEnemy && other.CompareTag("Player"))
         {
-            // Удаление игрока с уровня или уменьшение счетчика
+            RestartScene(); // Перезапуск сцены
         }
-        else if (isKey && other.CompareTag("Player"))
+    }
+
+    void RestartScene()
+    {
+        var persons = FindObjectsByType<CharacterParams>(FindObjectsSortMode.None);
+        var personsController = FindObjectOfType<PersonsController>();
+        foreach (var person in persons)
         {
-            // Логика перехода на следующий уровень
+            personsController.SetCharacterPosition(person.gameObject, person.startPosition.x, person.startPosition.y);
         }
     }
 }
