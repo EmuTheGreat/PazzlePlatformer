@@ -85,6 +85,11 @@ public class LevelEditor : MonoBehaviour
         {
             DestroyImmediate(keyLevelControl.transform.GetChild(i).gameObject);
         }
+
+        for (int i = ObjectsToCollide.transform.childCount - 1; i >= 0; i--)
+        {
+            DestroyImmediate(ObjectsToCollide.transform.GetChild(i).gameObject);
+        }
     }
 
     public Vector3 GetPositionFromGrid(int x, int y)
