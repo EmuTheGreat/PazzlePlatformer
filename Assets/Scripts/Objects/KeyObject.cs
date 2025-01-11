@@ -1,29 +1,21 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 public class KeyObject : MonoBehaviour
 {
-    public string[] validCharacterTags;
-    public string[] invalidCharacterTags;
+    public List<GameObject> assignedCharacters;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        foreach (var tag in validCharacterTags)
+        if (assignedCharacters.Contains(other.gameObject))
         {
-            if (other.CompareTag(tag))
+            KeyLevelControl keyLevelControl = FindObjectOfType<KeyLevelControl>();
+            if (keyLevelControl != null)
             {
-                FindObjectOfType<KeyLevelControl>().KeyCollected();
-                Destroy(other.gameObject);
-                Destroy(gameObject);
-                return;
+                keyLevelControl.KeyCollected();
             }
-        }
 
-        foreach (var tag in invalidCharacterTags)
-        {
-            if (other.CompareTag(tag))
-            {
-                return;
-            }
+            Destroy(gameObject);
         }
     }
 }
