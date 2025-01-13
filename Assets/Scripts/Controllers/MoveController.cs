@@ -15,7 +15,7 @@ public class MoveController : MonoBehaviour
     private List<bool> isGrounded = new();
 
     [SerializeField] private LayerMask groundLayer;
-    [SerializeField] private float groundCheckRadius = 0.2f;
+    [SerializeField] private float groundCheckHeight = 0.1f; // Высота области проверки
 
     private Camera mainCamera;
 
@@ -62,7 +62,12 @@ public class MoveController : MonoBehaviour
                 persons[i].transform.localScale = new Vector3(-Mathf.Abs(persons[i].transform.localScale.x), persons[i].transform.localScale.y, persons[i].transform.localScale.z);
             }
 
-            isGrounded[i] = Physics2D.OverlapCircle(new Vector2(colliders[i].bounds.center.x, colliders[i].bounds.min.y), groundCheckRadius, groundLayer);
+            // Проверка, стоит ли персонаж на земле, с использованием ширины коллайдера
+            float groundCheckWidth = colliders[i].bounds.size.x; // Ширина коллайдера
+            Vector2 groundCheckPosition = new Vector2(colliders[i].bounds.center.x, colliders[i].bounds.min.y - groundCheckHeight / 2);
+            Vector2 groundCheckSize = new Vector2(groundCheckWidth, groundCheckHeight);
+
+            isGrounded[i] = Physics2D.OverlapBox(groundCheckPosition, groundCheckSize, 0f, groundLayer);
 
             RestrictMovementToCameraBounds(rigidbodies[i]);
         }
@@ -130,8 +135,11 @@ public class MoveController : MonoBehaviour
 
         for (int i = 0; i < colliders.Count; i++)
         {
-            Vector2 groundCheckPosition = new Vector2(colliders[i].bounds.center.x, colliders[i].bounds.min.y);
-            Gizmos.DrawWireSphere(groundCheckPosition, groundCheckRadius);
+            float groundCheckWidth = colliders[i].bounds.size.x; // Ширина коллайдера
+            Vector2 groundCheckPosition = new Vector2(colliders[i].bounds.center.x, colliders[i].bounds.min.y - groundCheckHeight / 2);
+            Vector2 groundCheckSize = new Vector2(groundCheckWidth, groundCheckHeight);
+
+            Gizmos.DrawWireCube(groundCheckPosition, groundCheckSize);
         }
     }
 }
