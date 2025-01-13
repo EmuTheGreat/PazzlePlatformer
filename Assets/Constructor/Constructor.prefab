@@ -111,6 +111,7 @@ MonoBehaviour:
   - {fileID: 2715306793134704571, guid: 403b33724cdcedb4285559e7c9cb967d, type: 3}
   - {fileID: 1628025630171034879, guid: a3a9b708d322b334c816819c41bd46b2, type: 3}
   - {fileID: 1628025630171034879, guid: 7246e8021d58f154aac742cf24c0aa2f, type: 3}
+  - {fileID: 5797349849190205297, guid: b7c22a28a54e0794caed5ed27ba5e913, type: 3}
   tiles:
   - {fileID: 3694945992654135819, guid: 8a057a4293e23df41947ee2621a20f9a, type: 3}
   - {fileID: 3694945992654135819, guid: e262407c750c145439a04624887de5a6, type: 3}
@@ -440,13 +441,13 @@ MonoBehaviour:
   playerPrefabs:
   - {fileID: 2279941662399189546, guid: e392eac14ee764e438ee5d9c5faa66b3, type: 3}
   - {fileID: 2279941662399189546, guid: c8d4bd1b567a4124fbe77547b1f05eb7, type: 3}
-  objectPosition: {x: 5, y: 1}
+  objectPosition: {x: 18, y: 1}
   colliderSize: {x: 1, y: 1}
   movementSpeed: 5
   jumpForce: 10
   movementDirectionReverse: 0
   persons: []
-  selectedPrefabIndex: 0
+  selectedPrefabIndex: 1
   selectedCharacter: {fileID: 0}
 --- !u!1 &3217416512165880068
 GameObject:
