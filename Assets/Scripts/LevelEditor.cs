@@ -154,4 +154,29 @@ public class LevelEditor : MonoBehaviour
             }
         }
     }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.cyan;
+
+        float startX = -(gridWidth * (tileSize.x + tileSpacing.x)) / 2 + tileSize.x / 2;
+        float startY = -(gridHeight * (tileSize.y + tileSpacing.y)) / 2 + tileSize.y / 2;
+
+        for (int y = 0; y <= gridHeight; y++)
+        {
+            float posY = startY + y * (tileSize.y + tileSpacing.y);
+            Vector3 start = new Vector3(startX - tileSize.x / 2, posY - tileSize.y / 2, 0);
+            Vector3 end = new Vector3(startX + gridWidth * (tileSize.x + tileSpacing.x) - tileSize.x / 2, posY - tileSize.y / 2, 0);
+            Gizmos.DrawLine(start, end);
+        }
+
+        for (int x = 0; x <= gridWidth; x++)
+        {
+            float posX = startX + x * (tileSize.x + tileSpacing.x);
+            Vector3 start = new Vector3(posX - tileSize.x / 2, startY - tileSize.y / 2, 0);
+            Vector3 end = new Vector3(posX - tileSize.x / 2, startY + gridHeight * (tileSize.y + tileSpacing.y) - tileSize.y / 2, 0);
+            Gizmos.DrawLine(start, end);
+        }
+    }
+
 }
