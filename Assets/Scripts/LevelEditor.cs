@@ -4,6 +4,7 @@ using UnityEngine;
 public class LevelEditor : MonoBehaviour
 {
     public GameObject ObjectsToCollide;
+    public GameObject InteractObjects;
 
     [Header("Grid Settings")]
     public int gridWidth = 32;
@@ -90,6 +91,11 @@ public class LevelEditor : MonoBehaviour
         {
             DestroyImmediate(ObjectsToCollide.transform.GetChild(i).gameObject);
         }
+
+        for (int i = InteractObjects.transform.childCount - 1; i >= 0; i--)
+        {
+            DestroyImmediate(InteractObjects.transform.GetChild(i).gameObject);
+        }
     }
 
     public Vector3 GetPositionFromGrid(int x, int y)
@@ -123,6 +129,10 @@ public class LevelEditor : MonoBehaviour
         else if (tileObject.CompareTag("enemy") && ObjectsToCollide.transform != null)
         {
             tileObject.transform.SetParent(ObjectsToCollide.transform);
+        }
+        else if (tileObject.name.StartsWith("Button") || tileObject.name.StartsWith("Iron") && ObjectsToCollide.transform != null)
+        {
+            tileObject.transform.SetParent(InteractObjects.transform);
         }
         else
         {
