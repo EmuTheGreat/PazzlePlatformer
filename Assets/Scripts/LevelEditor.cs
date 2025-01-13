@@ -133,6 +133,7 @@ public class LevelEditor : MonoBehaviour
         else if (tileObject.name.StartsWith("Button") || tileObject.name.StartsWith("Iron") && ObjectsToCollide.transform != null)
         {
             tileObject.transform.SetParent(InteractObjects.transform);
+            tileObject.layer = 6;
         }
         else
         {
