@@ -48,7 +48,7 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
-  groundCheckRadius: 0.1
+  groundCheckHeight: 0.1
 --- !u!1 &1214194106121514054
 GameObject:
   m_ObjectHideFlags: 0
@@ -112,6 +112,7 @@ MonoBehaviour:
   - {fileID: 1628025630171034879, guid: a3a9b708d322b334c816819c41bd46b2, type: 3}
   - {fileID: 1628025630171034879, guid: 7246e8021d58f154aac742cf24c0aa2f, type: 3}
   - {fileID: 5797349849190205297, guid: b7c22a28a54e0794caed5ed27ba5e913, type: 3}
+  - {fileID: 2279941662399189546, guid: dddfc4246d1e3c44288f4062bbdb16f0, type: 3}
   tiles:
   - {fileID: 3694945992654135819, guid: 8a057a4293e23df41947ee2621a20f9a, type: 3}
   - {fileID: 3694945992654135819, guid: e262407c750c145439a04624887de5a6, type: 3}
@@ -505,7 +506,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6873509886372521738}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: InteractObjects
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -637,7 +638,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4916293831759786998}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ObjectsToCollide
   m_TagString: Untagged
   m_Icon: {fileID: 0}
